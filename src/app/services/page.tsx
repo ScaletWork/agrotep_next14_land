@@ -2,7 +2,13 @@
 
 import { FC } from "react";
 import Image from "next/image";
-import { ServiceItem, serviceLists } from "@/pages/AutoPark/constant";
+import {
+  logosList,
+  ServiceItem,
+  serviceLists,
+  transportationList,
+  transportationRoutesList,
+} from "@/pages/AutoPark/constant";
 import Slider from "@/components/autopark/Slider";
 
 const AutoPark: FC = () => {
@@ -32,6 +38,32 @@ const AutoPark: FC = () => {
     );
   };
 
+  const renderTransportationBlock = () => {
+    return transportationList.map((item, index) => <li key={index}>{item}</li>);
+  };
+
+  const renderTransportationRouteBlock = () => {
+    return transportationRoutesList.map((item, index) => (
+      <li key={index}>
+        <h5>{item.title}</h5>
+        <div className="transportation__routes_divider">
+          <div></div>
+        </div>
+        <div className="transportation__routes_text">
+          <p>{item.text}</p>
+        </div>
+      </li>
+    ));
+  };
+
+  const renderLogosList = () => {
+    return logosList.map((item, index) => (
+      <li key={index}>
+        <Image width={200} height={200} src={item} alt="" />
+      </li>
+    ));
+  };
+
   return (
     <div className="autopark">
       <div className="autopark__img">
@@ -42,7 +74,47 @@ const AutoPark: FC = () => {
         {renderServiceBlock(true, serviceLists.second, 2)}
         {renderServiceBlock(false, serviceLists.third, 3)}
       </section>
-
+      <section className="transportation">
+        <h3>
+          Перевезення <span>НЕБЕЗПЕЧНИХ</span> вантажів
+        </h3>
+        <div className="transportation__header">
+          <Image
+            width={300}
+            height={300}
+            src={"/img/autopark/danger.png"}
+            alt="Danger Sign"
+          />
+          <ul>{renderTransportationBlock()}</ul>
+        </div>
+        <div className="transportation__routes">
+          <Image
+            height={800}
+            width={1200}
+            src={"/img/autopark/world-star.png"}
+            alt="Start Globe"
+          />
+          <div className="transportation__text">
+            <h4>Наші основні логістичні маршрути </h4>
+            <ul>{renderTransportationRouteBlock()}</ul>
+          </div>
+        </div>
+      </section>
+      <section className="logos">
+        <ul>{renderLogosList()}</ul>
+        <div className="logos__block">
+          <h4>Чому нас обирають</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, dolores
+            rerum corporis consequatur officiis rem nam eaque illum numquam
+            veritatis at perferendis obcaecati molestias quo eius asperiores,
+            enim non dolore. Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Nesciunt aliquid, neque debitis iure qui nihil culpa tempore
+            tenetur quod animi. Dolore eos vel cumque blanditiis iste
+            consectetur odio velit facilis?
+          </p>
+        </div>
+      </section>
       <section className="info">
         <div className="info__wrapper">
           <div className="info__block">
