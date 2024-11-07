@@ -22,8 +22,9 @@ const LocationsForm: FC = () => {
       setTimeout(() => {
         setThankYouVisible(false);
       }, 4000);
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
-      console.error("Error!", error.message);
+      console.error("Error!");
     } finally {
       setLoading(false);
     }

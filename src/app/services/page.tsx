@@ -1,4 +1,4 @@
-import AutoParkComponent from "@/pages/AutoPark";
+import AutoParkComponent from "@/pagesComponents/AutoPark";
 import { FC } from "react";
 
 const AutoPark: FC = () => {

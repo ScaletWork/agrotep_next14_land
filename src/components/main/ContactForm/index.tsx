@@ -1,11 +1,13 @@
 "use client";
 
 import { FC, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const ContactForm: FC<{ isOpen: boolean; onClose: () => void }> = ({
   isOpen,
   onClose,
 }) => {
+  const { t } = useTranslation();
   const [loading, setLoading] = useState(false);
   const [thankYouVisible, setThankYouVisible] = useState(false);
   const scriptURL =
@@ -29,7 +31,7 @@ const ContactForm: FC<{ isOpen: boolean; onClose: () => void }> = ({
         setThankYouVisible(false);
       }, 4000);
     } catch (error) {
-      console.error("Error!", error.message);
+      console.error("Error!");
     } finally {
       setLoading(false);
     }
@@ -49,92 +51,92 @@ const ContactForm: FC<{ isOpen: boolean; onClose: () => void }> = ({
         >
           <div className="about-info">
             <legend className="form-legend form-legend-title">
-              Request Calculation
+              {t("request_calculation")}
             </legend>
             <input
               type="text"
               name="name"
-              placeholder="Full Name *"
+              placeholder={t("name")}
               className="input"
               required
             />
             <input
               type="text"
               name="phone"
-              placeholder="Phone Number"
+              placeholder={t("phone")}
               className="input"
             />
             <input
               type="email"
               name="email"
-              placeholder="Email *"
+              placeholder={t("email")}
               className="input"
               required
             />
             <input
               type="text"
               name="company"
-              placeholder="Company Name *"
+              placeholder={t("company")}
               className="input"
               required
             />
           </div>
           <div className="address-info">
             <div className="address">
-              <legend className="form-legend">Loading Address</legend>
+              <legend className="form-legend">{t("loading_address")}</legend>
               <input
                 type="text"
                 name="upload-location"
-                placeholder="Loading Place"
+                placeholder={t("upload_location")}
                 className="input"
               />
               <input
                 type="text"
                 name="customs-clearance-start"
-                placeholder="Customs Clearance Place"
+                placeholder={t("customs_clearance_start")}
                 className="input"
               />
             </div>
             <div className="address">
-              <legend className="form-legend">Unloading Address</legend>
+              <legend className="form-legend">{t("unloading_address")}</legend>
               <input
                 type="text"
                 name="unload-location"
-                placeholder="Unloading Place"
+                placeholder={t("unload_location")}
                 className="input"
               />
               <input
                 type="text"
                 name="customs-clearance-end"
-                placeholder="Customs Clearance Place"
+                placeholder={t("customs_clearance_end")}
                 className="input"
               />
             </div>
           </div>
           <div className="additionally-info">
-            <legend className="form-legend">Cargo Information</legend>
+            <legend className="form-legend">{t("cargo_information")}</legend>
             <input
               type="text"
               name="cargo-information"
-              placeholder="Cargo Type"
+              placeholder={t("cargo_type")}
               className="input"
             />
             <input
               type="number"
               name="weight"
-              placeholder="Weight"
+              placeholder={t("weight")}
               className="input"
             />
             <select name="truck-type" className="input">
-              <option value="">Select Trailer Type</option>
-              <option value="tent">Tent</option>
-              <option value="ref">Refrigerator</option>
-              <option value="any">Any</option>
+              <option value="">{t("select_trailer")}</option>
+              <option value="tent">{t("tent")}</option>
+              <option value="ref">{t("ref")}</option>
+              <option value="any">{t("any")}</option>
             </select>
             <input type="date" name="date" className="input" />
             <textarea
               name="message"
-              placeholder="Additional Information"
+              placeholder={t("additional_information")}
               className="comment"
             ></textarea>
           </div>
@@ -143,14 +145,12 @@ const ContactForm: FC<{ isOpen: boolean; onClose: () => void }> = ({
             type="submit"
             style={{ cursor: "pointer" }}
           >
-            SEND REQUEST
+            {t("send_request")}
           </button>
         </form>
         {loading && <div className="loader"></div>}
         {thankYouVisible && (
-          <div className="feedback-thanks show">
-            Thank you for your request!
-          </div>
+          <div className="feedback-thanks show">{t("thank_you")}</div>
         )}
       </div>
     </div>

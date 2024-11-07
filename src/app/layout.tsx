@@ -4,6 +4,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import Footer from "@/layout/Footer";
 import Header from "@/layout/Header";
+import LocalizationWrapper from "@/layout/LocalizationWrapper";
 
 export const metadata: Metadata = {
   title: "Agrotep",
@@ -18,9 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body id="__next">
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <LocalizationWrapper>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </LocalizationWrapper>
       </body>
     </html>
   );

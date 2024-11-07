@@ -1,91 +1,173 @@
 "use client";
 
 import { FC, useEffect, useState } from "react";
-import { gsap } from "gsap";
+import { motion } from "framer-motion";
 import ContactForm from "@/components/main/ContactForm";
 import Link from "next/link";
-import { navLinks } from "@/utils/constant";
+import { useTranslation } from "react-i18next";
 
 const Header: FC = () => {
   const [isNavVisible, setNavVisible] = useState(false);
   const [isModalOpen, setModalOpen] = useState(false);
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
+  const [activeLang, setActiveLang] = useState("UA");
+  const { t } = useTranslation();
+  const { i18n } = useTranslation();
+
+  const navLinks = [
+    { text: t("home"), href: "/" },
+    { text: t("aboutUs"), href: "/about-us" },
+    { text: t("services"), href: "/services" },
+    { text: t("trucks"), href: "/auto-park" },
+    // { text: t("careers"), href: "/careers" },
+    // { text: t("contactUs"), href: "/contact" },
+  ];
 
   const toggleModal = () => setModalOpen((prev) => !prev);
+
+  const handleLanguageSwitch = (lang: string) => {
+    i18n.changeLanguage(lang === "UA" ? "uk" : "en");
+    setActiveLang(lang);
+    localStorage.setItem("activeLang", lang);
+  };
 
   const toggleNav = () => {
     setNavVisible((prev) => !prev);
     document.body.classList.toggle("no-scroll", !isNavVisible);
   };
 
-  // useEffect(() => {
-  //   const heroTl = gsap.timeline();
-  //   heroTl
-  //     .from(".logo-img", {
-  //       yPercent: -175,
-  //       opacity: 0,
-  //       duration: 1.2,
-  //     })
-  //     .from(".logo-text", {
-  //       yPercent: -175,
-  //       opacity: 0,
-  //       duration: 1.2,
-  //       delay: -0.7,
-  //     })
-  //     .from(".nav-item", {
-  //       opacity: 0,
-  //       xPercent: 100,
-  //       stagger: 0.2,
-  //       duration: 0.9,
-  //     })
-  //     .from(".nav-request-btn", {
-  //       opacity: 0,
-  //       xPercent: 100,
-  //       duration: 0.9,
-  //       delay: -0.5,
-  //     })
-  //     .from(".lang-menu", {
-  //       opacity: 0,
-  //       xPercent: 100,
-  //       duration: 0.9,
-  //       delay: -0.5,
-  //     });
-  // }, []);
+  useEffect(() => {
+    const storedLang = localStorage.getItem("activeLang");
+    console.log(storedLang);
+    if (storedLang) {
+      setActiveLang(storedLang);
+      i18n.changeLanguage(storedLang === "UA" ? "uk" : "en");
+    }
+  }, [i18n]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth >= 1051);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const logoVariant1 = {
+    hidden: { y: -175, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 1.2 } },
+  };
+
+  const logoVariant2 = {
+    hidden: { y: -175, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 1.2, delay: 0.4 } },
+  };
+
+  const navItemVariants = {
+    hidden: { opacity: 0, x: 100 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.9, staggerChildren: 0.2, delay: 0.2 },
+    },
+  };
+
+  const langButtonVariants = {
+    active: {
+      scale: 1.2,
+      backgroundColor: "#eff3f3",
+      color: "#f2cd00",
+      transition: { type: "spring", stiffness: 300, damping: 25 },
+    },
+    inactive: {
+      scale: 1,
+      backgroundColor: "transparent",
+      color: "#fff",
+      transition: { type: "spring", stiffness: 300, damping: 25 },
+    },
+  };
 
   return (
     <header>
       <div className="container header">
         <Link className="logo" href="/">
-          <img className="logo-img" src="/svg/logo.svg" alt="" />
-          <img className="logo-text" src="/img/White_text3.png" alt="" />
+          <motion.img
+            className="logo-img"
+            src="/svg/logo.svg"
+            alt=""
+            initial="hidden"
+            animate="visible"
+            variants={logoVariant1}
+          />
+          <motion.img
+            className="logo-text"
+            src="/img/White_text3.png"
+            alt=""
+            initial="hidden"
+            animate="visible"
+            variants={logoVariant2}
+          />
         </Link>
         <div className="navigation-container">
-          <nav className={`navigation ${isNavVisible ? "show-nav" : ""}`}>
+          <motion.nav
+            className={`navigation ${isNavVisible ? "show-nav" : ""}`}
+            initial="hidden"
+            animate={isLargeScreen || isNavVisible ? "visible" : "hidden"}
+            variants={navItemVariants}
+          >
             <ul className="nav-list">
               {navLinks.map((link) => (
-                <li className="nav-item" key={link.text}>
+                <motion.li
+                  className="nav-item"
+                  key={link.text}
+                  variants={navItemVariants}
+                >
                   <Link href={link.href} className="nav-item-link">
                     {link.text}
                   </Link>
-                </li>
+                </motion.li>
               ))}
             </ul>
-          </nav>
-          <button
+          </motion.nav>
+          <motion.button
             className="nav-request-btn extra-top extra-bottom"
             onClick={toggleModal}
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, delay: 1 }}
           >
             <span className="nav-request-line"></span>
-            Transportation Calculation
-          </button>
+            {t("transportation_calculation")}
+          </motion.button>
           <ContactForm isOpen={isModalOpen} onClose={toggleModal} />
-          <div className="lang-menu">
-            <Link href="/" className="lang">
+          <motion.div
+            className="lang-menu"
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, delay: 1.0 }}
+          >
+            <motion.a
+              href="#"
+              className="lang"
+              variants={langButtonVariants}
+              animate={activeLang === "UA" ? "active" : "inactive"}
+              onClick={() => handleLanguageSwitch("UA")}
+            >
               <span>UA</span>
-            </Link>
-            <Link href="/" className="active-lang lang">
+            </motion.a>
+            <motion.a
+              href="#"
+              className="active-lang lang"
+              variants={langButtonVariants}
+              animate={activeLang === "EN" ? "active" : "inactive"}
+              onClick={() => handleLanguageSwitch("EN")}
+            >
               <span>EN</span>
-            </Link>
-          </div>
+            </motion.a>
+          </motion.div>
           <div
             className={`burger-menu ${isNavVisible ? "active" : ""}`}
             onClick={toggleNav}

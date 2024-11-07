@@ -1,4 +1,4 @@
-import ServicesComponent from "@/pages/Services";
+import ServicesComponent from "@/pagesComponents/Services";
 import { FC } from "react";
 
 const Services: FC = () => {
