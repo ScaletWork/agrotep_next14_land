@@ -32,7 +32,7 @@ const LocationsForm: FC = () => {
 
   return (
     <section className="locations">
-      <img src="/img/main/map.jpg" alt="" className="location-map" />
+      <img src="img/main/map.jpg" alt="" className="location-map" />
       <form
         onSubmit={handleSubmit}
         className="modal-form location-form"

@@ -26,7 +26,7 @@ const AutoParkComponent: FC = () => {
     first: {
       count: "250",
       link: t("serviceFirstLink"),
-      img: "/img/autopark/truck1.png",
+      img: "img/autopark/truck1.png",
       list: [
         t("serviceFirstList0"),
         t("serviceFirstList1"),
@@ -37,7 +37,7 @@ const AutoParkComponent: FC = () => {
     second: {
       count: "50",
       link: t("serviceSecondLink"),
-      img: "/img/autopark/truck2.png",
+      img: "img/autopark/truck2.png",
       list: [
         t("serviceSecondList0"),
         t("serviceSecondList1"),
@@ -48,7 +48,7 @@ const AutoParkComponent: FC = () => {
     third: {
       count: "200",
       link: t("serviceThirdLink"),
-      img: "/img/autopark/truck3.png",
+      img: "img/autopark/truck3.png",
       list: [
         t("serviceThirdList0"),
         t("serviceThirdList1"),
@@ -74,15 +74,15 @@ const AutoParkComponent: FC = () => {
   ];
 
   const logosList = [
-    "/img/autopark/logos/1.png",
-    "/img/autopark/logos/2.png",
-    "/img/autopark/logos/3.png",
-    "/img/autopark/logos/4.png",
-    "/img/autopark/logos/5.png",
-    "/img/autopark/logos/6.png",
-    "/img/autopark/logos/7.png",
-    "/img/autopark/logos/8.png",
-    "/img/autopark/logos/9.png",
+    "img/autopark/logos/1.png",
+    "img/autopark/logos/2.png",
+    "img/autopark/logos/3.png",
+    "img/autopark/logos/4.png",
+    "img/autopark/logos/5.png",
+    "img/autopark/logos/6.png",
+    "img/autopark/logos/7.png",
+    "img/autopark/logos/8.png",
+    "img/autopark/logos/9.png",
   ];
 
   const renderServiceBlock = (
@@ -203,7 +203,7 @@ const AutoParkComponent: FC = () => {
           <Image
             width={300}
             height={300}
-            src="/img/autopark/danger.png"
+            src="img/autopark/danger.png"
             alt={t("danger_sign")}
           />
           <ul>{renderTransportationBlock()}</ul>
@@ -212,7 +212,7 @@ const AutoParkComponent: FC = () => {
           <Image
             height={800}
             width={1200}
-            src="/img/autopark/world-star.png"
+            src="img/autopark/world-star.png"
             alt={t("start_globe")}
           />
           <motion.div
@@ -270,8 +270,8 @@ const AutoParkComponent: FC = () => {
             </motion.div>
             <Slider
               images={[
-                "/img/autopark/slider-images/1.jpg",
-                "/img/autopark/slider-images/1.jpg",
+                "img/autopark/slider-images/1.jpg",
+                "img/autopark/slider-images/1.jpg",
               ]}
               width={541}
               height={535}
@@ -281,8 +281,8 @@ const AutoParkComponent: FC = () => {
           <div className="info__block">
             <Slider
               images={[
-                "/img/autopark/slider-images/1.jpg",
-                "/img/autopark/slider-images/1.jpg",
+                "img/autopark/slider-images/1.jpg",
+                "img/autopark/slider-images/1.jpg",
               ]}
               width={541}
               height={535}
@@ -325,13 +325,13 @@ const AutoParkComponent: FC = () => {
           <Image
             width={500}
             height={300}
-            src="/img/autopark/passport1.png"
+            src="img/autopark/passport1.png"
             alt=""
           />
           <Image
             width={500}
             height={300}
-            src="/img/autopark/passport2.png"
+            src="img/autopark/passport2.png"
             alt=""
           />
         </div>

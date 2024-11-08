@@ -92,7 +92,7 @@ const ServicesComponent: FC = () => {
         >
           <SwiperSlide>
             <motion.img
-              src={"/img/services/bg_slider/1.jpg"}
+              src={"img/services/bg_slider/1.jpg"}
               alt={t("slide")}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -102,7 +102,7 @@ const ServicesComponent: FC = () => {
           </SwiperSlide>
           <SwiperSlide>
             <motion.img
-              src={"/img/services/bg_slider/2.jpg"}
+              src={"img/services/bg_slider/2.jpg"}
               alt={t("slide")}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -112,7 +112,7 @@ const ServicesComponent: FC = () => {
           </SwiperSlide>
           <SwiperSlide>
             <motion.img
-              src={"/img/services/bg_slider/3.jpg"}
+              src={"img/services/bg_slider/3.jpg"}
               alt={t("slide")}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -122,7 +122,7 @@ const ServicesComponent: FC = () => {
           </SwiperSlide>
           <SwiperSlide>
             <motion.img
-              src={"/img/services/bg_slider/4.jpg"}
+              src={"img/services/bg_slider/4.jpg"}
               alt={t("slide")}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -150,7 +150,7 @@ const ServicesComponent: FC = () => {
           transition={{ duration: 1, delay: 1 }}
           viewport={{ once: true }}
         >
-          <img src={"/img/services/main_bg2.png"} alt={t("slide")} />
+          <img src={"img/services/main_bg2.png"} alt={t("slide")} />
           <h2>250</h2>
           <h3>{t("Trucks")}</h3>
         </motion.div>
@@ -272,7 +272,7 @@ const ServicesComponent: FC = () => {
         >
           <SwiperSlide>
             <motion.img
-              src={"/img/services/bg_slider/1.jpg"}
+              src={"img/services/bg_slider/1.jpg"}
               alt={t("slide")}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -282,7 +282,7 @@ const ServicesComponent: FC = () => {
           </SwiperSlide>
           <SwiperSlide>
             <motion.img
-              src={"/img/services/bg_slider/2.jpg"}
+              src={"img/services/bg_slider/2.jpg"}
               alt={t("slide")}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -292,7 +292,7 @@ const ServicesComponent: FC = () => {
           </SwiperSlide>
           <SwiperSlide>
             <motion.img
-              src={"/img/services/bg_slider/3.jpg"}
+              src={"img/services/bg_slider/3.jpg"}
               alt={t("slide")}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -302,7 +302,7 @@ const ServicesComponent: FC = () => {
           </SwiperSlide>
           <SwiperSlide>
             <motion.img
-              src={"/img/services/bg_slider/4.jpg"}
+              src={"img/services/bg_slider/4.jpg"}
               alt={t("slide")}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}

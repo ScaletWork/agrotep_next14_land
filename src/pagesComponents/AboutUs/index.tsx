@@ -61,18 +61,18 @@ const AboutUsComponent: FC = () => {
     {
       title: t("sliderList.1.title"),
       text: t("sliderList.1.text"),
-      img: "/img/about/slider/1.png",
+      img: "img/about/slider/1.png",
     },
     {
       title: "",
       text: t("sliderList.2.text"),
-      img: "/img/about/slider/2.png",
+      img: "img/about/slider/2.png",
       className: "about-us-slider__element_swap",
     },
     {
       title: "",
       text: t("sliderList.3.text"),
-      img: "/img/about/slider/3.png",
+      img: "img/about/slider/3.png",
     },
   ];
 
@@ -165,7 +165,7 @@ const AboutUsComponent: FC = () => {
         <Image
           width={500}
           height={500}
-          src="/img/about/trucks.jpg"
+          src="img/about/trucks.jpg"
           alt="about-us"
         />
         <div className="about-us-info__text">

@@ -62,8 +62,8 @@ const Footer: FC = () => {
             <a href="" className="social-link linkedin"></a>
           </div>
           <a className="logo" href="index.html">
-            <img className="logo-img" src="/img/main/logo.svg" alt="" />
-            <img className="logo-text" src="/img/main/White_text3.png" alt="" />
+            <img className="logo-img" src="img/main/logo.svg" alt="" />
+            <img className="logo-text" src="img/main/White_text3.png" alt="" />
           </a>
         </div>
       </div>

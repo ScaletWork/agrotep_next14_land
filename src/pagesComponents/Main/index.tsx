@@ -43,7 +43,7 @@ const Main: FC = () => {
       <section className="hero">
         <div className="hero-content container">
           <motion.img
-            src="/img/main/name.png"
+            src="img/main/name.png"
             alt=""
             className="hero-name"
             initial={{ y: "-175%", opacity: 0 }}
