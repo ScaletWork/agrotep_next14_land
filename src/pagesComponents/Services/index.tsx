@@ -8,11 +8,6 @@ import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import { useTranslation } from "react-i18next";
 
-interface IServicesLists {
-  first: string[];
-  second: string[];
-}
-
 const ServicesComponent: FC = () => {
   const { t } = useTranslation();
 
@@ -92,12 +87,12 @@ const ServicesComponent: FC = () => {
         <div className="services-main__overlay"></div>
         <Swiper
           slidesPerView={1}
-          autoplay={{ delay: 10000 }}
+          autoplay={{ delay: 5000 }}
           modules={[Autoplay]}
         >
           <SwiperSlide>
             <motion.img
-              src={"/img/services/main_bg.jpg"}
+              src={"/img/services/bg_slider/1.jpg"}
               alt={t("slide")}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -107,7 +102,27 @@ const ServicesComponent: FC = () => {
           </SwiperSlide>
           <SwiperSlide>
             <motion.img
-              src={"/img/services/main_bg.jpg"}
+              src={"/img/services/bg_slider/2.jpg"}
+              alt={t("slide")}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <motion.img
+              src={"/img/services/bg_slider/3.jpg"}
+              alt={t("slide")}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <motion.img
+              src={"/img/services/bg_slider/4.jpg"}
               alt={t("slide")}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -249,15 +264,54 @@ const ServicesComponent: FC = () => {
       <section className="services-elements">
         {renderServiceElementsList()}
       </section>
-      <motion.img
-        className="services-footer-bg"
-        src="/img/services/footer_bg.jpg"
-        alt=""
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1 }}
-        viewport={{ once: true }}
-      />
+      <section className="services-footer-bg">
+        <Swiper
+          slidesPerView={1}
+          autoplay={{ delay: 5000 }}
+          modules={[Autoplay]}
+        >
+          <SwiperSlide>
+            <motion.img
+              src={"/img/services/bg_slider/1.jpg"}
+              alt={t("slide")}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <motion.img
+              src={"/img/services/bg_slider/2.jpg"}
+              alt={t("slide")}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <motion.img
+              src={"/img/services/bg_slider/3.jpg"}
+              alt={t("slide")}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <motion.img
+              src={"/img/services/bg_slider/4.jpg"}
+              alt={t("slide")}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+            />
+          </SwiperSlide>
+        </Swiper>
+      </section>
     </div>
   );
 };

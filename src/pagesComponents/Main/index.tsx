@@ -1,28 +1,24 @@
 "use client";
 
 import LocationsForm from "@/components/main/LocationsForm";
-import { FC } from "react";
-import { motion } from "framer-motion";
+import { FC, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import { useInView } from "react-intersection-observer";
 
 const Main: FC = () => {
-  const heroTitleVariants = {
-    hidden: { y: -175, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 1.2 } },
-  };
+  const { t } = useTranslation();
+  const [historyRef, historyInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
+  });
+  const historyTextControls = useAnimation();
 
-  const advantItemVariants = {
-    hidden: { x: 140, opacity: 0 },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: { duration: 1.2, staggerChildren: 0.2 },
-    },
-  };
-
-  const historyTextVariants = {
-    hidden: { x: 140, opacity: 0 },
-    visible: { x: 0, opacity: 1, transition: { duration: 1.2 } },
-  };
+  useEffect(() => {
+    if (historyInView) {
+      historyTextControls.start({ x: 0, opacity: 1 });
+    }
+  }, [historyInView, historyTextControls]);
 
   const expBgTextVariants = {
     hidden: { x: -275, opacity: 0 },
@@ -46,84 +42,70 @@ const Main: FC = () => {
     <>
       <section className="hero">
         <div className="hero-content container">
+          <motion.img
+            src="/img/main/name.png"
+            alt=""
+            className="hero-name"
+            initial={{ y: "-175%", opacity: 0 }}
+            animate={{ y: "0%", opacity: 1 }}
+            transition={{ duration: 1.2 }}
+          />
           <motion.h1
             className="hero-title"
-            initial="hidden"
-            animate="visible"
-            variants={heroTitleVariants}
+            initial={{ y: "-175%", opacity: 0 }}
+            animate={{ y: "0%", opacity: 1 }}
+            transition={{ duration: 1.2, delay: 0.5 }}
           >
-            Leading in international refrigerated transportation
+            {t("hero_title")}
           </motion.h1>
           <motion.button
             className="hero-btn"
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9, delay: 0.5 }}
+            transition={{ duration: 0.9, delay: 1 }}
           >
-            Get a consultation
+            {t("consultation_button")}
           </motion.button>
-          <div className="hero-advant">
-            {[
-              "Competent pricing policy",
-              "Over 30 years of experience",
-              "Market leaders",
-            ].map((text, index) => (
-              <motion.div
-                key={index}
-                className="advant-item"
-                initial="hidden"
-                animate="visible"
-                variants={advantItemVariants}
-              >
-                <img
-                  className="advant-item-icon"
-                  src={`/svg/icon${index + 1}.svg`}
-                  alt=""
-                />
-                <span className="advant-item-text">{text}</span>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
+
       <section className="history">
-        <motion.div
-          className="history-container"
-          initial="hidden"
-          whileInView="visible"
-          variants={historyTextVariants}
-        >
-          <p className="history-text">
-            &quot;AGROTEP&quot; LTD is a leader in regular freight
-            transportation across Ukraine, the EU, and Asia countries since
-            1993. Continuous fleet renewal and the implementation of innovative
-            logistics technologies ensure reliability and timely deliveries. We
-            provide consistently high-quality services for our partners.
-          </p>
+        <div className="history-container" ref={historyRef}>
+          <motion.p
+            className="history-text"
+            initial={{ x: "140%", opacity: 0 }}
+            animate={historyTextControls}
+            transition={{ duration: 1.2 }}
+          >
+            {t("history_text")}
+          </motion.p>
           <div className="history-img-bg"></div>
-        </motion.div>
+        </div>
       </section>
+
       <section className="experience">
         <div className="exp-bg">
           <motion.div
             className="exp-bg-content"
             initial="hidden"
             whileInView="visible"
+            viewport={{ once: true }}
             variants={expBgTextVariants}
           >
-            <span className="exp-bg-text">Quality</span>
-            <span className="exp-bg-text">Speed</span>
-            <span className="exp-bg-text">Reliable</span>
+            <span className="exp-bg-text">{t("experience_quality")}</span>
+            <span className="exp-bg-text">{t("experience_speed")}</span>
+            <span className="exp-bg-text">{t("experience_reliable")}</span>
           </motion.div>
           <motion.div
             className="exp-years"
             initial="hidden"
             whileInView="visible"
+            viewport={{ once: true }}
             variants={exp3dVariants}
           >
             <span className="exp-years-img exp-3d">30</span>
             <span className="exp-years-text exp-years-img2 exp-3d">
-              Years of experience
+              {t("experience_years")}
             </span>
           </motion.div>
         </div>

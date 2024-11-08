@@ -31,7 +31,7 @@ const ContactForm: FC<{ isOpen: boolean; onClose: () => void }> = ({
         setThankYouVisible(false);
       }, 4000);
     } catch (error) {
-      console.error("Error!");
+      console.error("Error!", error);
     } finally {
       setLoading(false);
     }

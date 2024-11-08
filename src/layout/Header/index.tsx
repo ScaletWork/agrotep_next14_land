@@ -9,10 +9,12 @@ import { useTranslation } from "react-i18next";
 const Header: FC = () => {
   const [isNavVisible, setNavVisible] = useState(false);
   const [isModalOpen, setModalOpen] = useState(false);
-  const [isLargeScreen, setIsLargeScreen] = useState(false);
+  const [isLargeScreen, setIsLargeScreen] = useState(-1);
   const [activeLang, setActiveLang] = useState("UA");
   const { t } = useTranslation();
   const { i18n } = useTranslation();
+
+  console.log(isLargeScreen);
 
   const navLinks = [
     { text: t("home"), href: "/" },
@@ -25,7 +27,11 @@ const Header: FC = () => {
 
   const toggleModal = () => setModalOpen((prev) => !prev);
 
-  const handleLanguageSwitch = (lang: string) => {
+  const handleLanguageSwitch = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    lang: string
+  ) => {
+    e.preventDefault();
     i18n.changeLanguage(lang === "UA" ? "uk" : "en");
     setActiveLang(lang);
     localStorage.setItem("activeLang", lang);
@@ -41,13 +47,17 @@ const Header: FC = () => {
     console.log(storedLang);
     if (storedLang) {
       setActiveLang(storedLang);
-      i18n.changeLanguage(storedLang === "UA" ? "uk" : "en");
+      setTimeout(() => {
+        i18n.changeLanguage(storedLang === "UA" ? "uk" : "en");
+      }, 100);
     }
   }, [i18n]);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsLargeScreen(window.innerWidth >= 1051);
+      setIsLargeScreen(
+        !window.innerWidth ? -1 : window.innerWidth >= 1051 ? 1 : 0
+      );
     };
 
     handleResize();
@@ -96,7 +106,7 @@ const Header: FC = () => {
         <Link className="logo" href="/">
           <motion.img
             className="logo-img"
-            src="/svg/logo.svg"
+            src="/img/main/logo.svg"
             alt=""
             initial="hidden"
             animate="visible"
@@ -104,7 +114,7 @@ const Header: FC = () => {
           />
           <motion.img
             className="logo-text"
-            src="/img/White_text3.png"
+            src="/img/main/White_text3.png"
             alt=""
             initial="hidden"
             animate="visible"
@@ -112,26 +122,46 @@ const Header: FC = () => {
           />
         </Link>
         <div className="navigation-container">
-          <motion.nav
-            className={`navigation ${isNavVisible ? "show-nav" : ""}`}
-            initial="hidden"
-            animate={isLargeScreen || isNavVisible ? "visible" : "hidden"}
-            variants={navItemVariants}
-          >
-            <ul className="nav-list">
-              {navLinks.map((link) => (
-                <motion.li
-                  className="nav-item"
-                  key={link.text}
-                  variants={navItemVariants}
-                >
-                  <Link href={link.href} className="nav-item-link">
-                    {link.text}
-                  </Link>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.nav>
+          {isLargeScreen === 1 ? (
+            <motion.nav
+              className={`navigation ${isNavVisible ? "show-nav" : ""}`}
+              initial="hidden"
+              animate={isLargeScreen || isNavVisible ? "visible" : "hidden"}
+              variants={navItemVariants}
+            >
+              <ul className="nav-list">
+                {navLinks.map((link) => (
+                  <motion.li
+                    className="nav-item"
+                    key={link.text}
+                    variants={navItemVariants}
+                  >
+                    <Link href={link.href} className="nav-item-link">
+                      {link.text}
+                    </Link>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.nav>
+          ) : isLargeScreen === 0 ? (
+            <div className={`navigation ${isNavVisible ? "show-nav" : ""}`}>
+              <ul className="nav-list">
+                {navLinks.map((link) => (
+                  <motion.li
+                    className="nav-item"
+                    key={link.text}
+                    variants={navItemVariants}
+                  >
+                    <Link href={link.href} className="nav-item-link">
+                      {link.text}
+                    </Link>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+          ) : (
+            <></>
+          )}
           <motion.button
             className="nav-request-btn extra-top extra-bottom"
             onClick={toggleModal}
@@ -154,7 +184,7 @@ const Header: FC = () => {
               className="lang"
               variants={langButtonVariants}
               animate={activeLang === "UA" ? "active" : "inactive"}
-              onClick={() => handleLanguageSwitch("UA")}
+              onClick={(e) => handleLanguageSwitch(e, "UA")}
             >
               <span>UA</span>
             </motion.a>
@@ -163,7 +193,7 @@ const Header: FC = () => {
               className="active-lang lang"
               variants={langButtonVariants}
               animate={activeLang === "EN" ? "active" : "inactive"}
-              onClick={() => handleLanguageSwitch("EN")}
+              onClick={(e) => handleLanguageSwitch(e, "EN")}
             >
               <span>EN</span>
             </motion.a>
