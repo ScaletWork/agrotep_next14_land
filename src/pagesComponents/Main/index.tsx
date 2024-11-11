@@ -1,10 +1,11 @@
 "use client";
 
 import LocationsForm from "@/components/main/LocationsForm";
-import { FC, useEffect } from "react";
+import { FC, useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { useInView } from "react-intersection-observer";
+import ContactForm from "@/components/main/ContactForm";
 
 const Main: FC = () => {
   const { t } = useTranslation();
@@ -13,6 +14,8 @@ const Main: FC = () => {
     threshold: 0.3,
   });
   const historyTextControls = useAnimation();
+  const [isModalOpen, setModalOpen] = useState(false);
+  const toggleModal = () => setModalOpen((prev) => !prev);
 
   useEffect(() => {
     if (historyInView) {
@@ -43,7 +46,7 @@ const Main: FC = () => {
       <section className="hero">
         <div className="hero-content container">
           <motion.img
-            src="img/main/name.png"
+            src="/img/main/name.png"
             alt=""
             className="hero-name"
             initial={{ y: "-175%", opacity: 0 }}
@@ -63,6 +66,7 @@ const Main: FC = () => {
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9, delay: 1 }}
+            onClick={toggleModal}
           >
             {t("consultation_button")}
           </motion.button>
@@ -111,6 +115,7 @@ const Main: FC = () => {
         </div>
       </section>
       <LocationsForm />
+      <ContactForm isOpen={isModalOpen} onClose={toggleModal} />
     </>
   );
 };

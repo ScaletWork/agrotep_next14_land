@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("img/autopark/main_bg.jpg");
+    background-image: url("/img/autopark/main_bg.jpg");
     background-size: cover;
     background-position: center;
     padding: 50px 0;
@@ -180,10 +180,7 @@
     }
 
     img {
-      width: auto;
       height: auto;
-      max-height: 500px;
-      flex: 1;
     }
   }
 
@@ -222,6 +219,7 @@
       height: auto;
       max-width: 100%;
       overflow: hidden;
+      max-height: 900px;
     }
 
     ul {
@@ -262,6 +260,11 @@
     margin-top: 50px;
     &__header {
       flex-direction: column;
+
+      img {
+        width: 100%;
+        max-width: 400px;
+      }
     }
 
     &__routes {
@@ -349,7 +352,7 @@
 
 .info {
   padding: 200px 0;
-  background-image: url("img/autopark/info_bg.jpg");
+  background-image: url("/img/autopark/info_bg.jpg");
   background-size: cover;
   background-position: center;
 

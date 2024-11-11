@@ -106,7 +106,7 @@ const Header: FC = () => {
         <Link className="logo" href="/">
           <motion.img
             className="logo-img"
-            src="img/main/logo.svg"
+            src="/img/main/logo.svg"
             alt=""
             initial="hidden"
             animate="visible"
@@ -114,7 +114,7 @@ const Header: FC = () => {
           />
           <motion.img
             className="logo-text"
-            src="img/main/White_text3.png"
+            src="/img/main/White_text3.png"
             alt=""
             initial="hidden"
             animate="visible"
@@ -151,6 +151,7 @@ const Header: FC = () => {
                     className="nav-item"
                     key={link.text}
                     variants={navItemVariants}
+                    onClick={toggleNav}
                   >
                     <Link href={link.href} className="nav-item-link">
                       {link.text}
