@@ -1,0 +1,263 @@
+.careers-page {
+  .career {
+    overflow: hidden;
+  }
+  .career-hero {
+    height: 70vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-image: url("/img/careers/join3.jpg");
+    /* background-position: left, top; */
+    background-size: cover;
+  }
+  .career-content {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-end; */
+    align-items: center;
+    /* align-content: center; */
+    width: 40%;
+    /* padding-left: 15%; */
+    height: 100%;
+    background-image: linear-gradient(270deg, #222f4e 58.52%, #174ac3 132.89%);
+  }
+  .career-hero-title {
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    /* transform: skewX(20deg); */
+    font-size: clamp(22px, 3vw, 48px);
+    color: #ffffff;
+    max-width: 60%;
+    margin: 10vh 3vw 0 3vw;
+    /* margin-right: 3vw;
+        margin-top: 10vh; */
+  }
+  .career-hero-descript {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 30px;
+    color: #ffffff;
+    max-width: 60%;
+    margin: 10vh 3vw 0 3vw;
+  }
+  .career-job {
+    /* height: 100vh; */
+    background: linear-gradient(270deg, #222f4e 58.52%, #174ac3 132.89%);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding-bottom: 80px;
+  }
+  .career-advantages {
+    align-items: center;
+    box-sizing: border-box;
+    max-width: 400px;
+    margin-top: 80px;
+    margin-left: 30px;
+    padding: 30px;
+  }
+  .career-advantages-title {
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 1px;
+    font-size: 28px;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 500;
+  }
+  .career-info {
+    margin-left: 5%;
+    max-width: 50vw;
+  }
+  .driver-title {
+    max-width: 75%;
+    font-size: clamp(28px, 3vw, 42px);
+    color: #f2cd00;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    padding: 20px 0;
+    text-wrap: nowrap;
+  }
+  .driver-descript {
+    font-size: clamp(16px, 1.3vw, 22px);
+    font-weight: 500;
+    line-height: 30px;
+    color: #ffffff;
+  }
+  .service-title {
+    max-width: 75%;
+    font-size: clamp(34px, 3vw, 42px);
+    color: #f2cd00;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    padding: 20px 0;
+  }
+  .service-descript {
+    font-size: clamp(16px, 1.3vw, 22px);
+    font-weight: 500;
+    line-height: 30px;
+    color: #ffffff;
+  }
+  .career-driver {
+    position: relative;
+    margin-bottom: 100px;
+    margin-top: 50px;
+  }
+  .career-driver::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-top: 5px solid #f2cd00;
+    border-left: 5px solid #f2cd00;
+    top: -20px;
+    left: -20px;
+  }
+  .career-driver::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-bottom: 5px solid #f2cd00;
+    border-right: 5px solid #f2cd00;
+    bottom: -20px;
+    right: -20px;
+  }
+  .career-service {
+    position: relative;
+  }
+  .career-service::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-top: 5px solid #f2cd00;
+    border-left: 5px solid #f2cd00;
+    top: -20px;
+    left: -20px;
+  }
+  .career-service::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-bottom: 5px solid #f2cd00;
+    border-right: 5px solid #f2cd00;
+    bottom: -20px;
+    right: -20px;
+  }
+  .career-advantages-item {
+    list-style: none;
+    position: relative;
+    margin-bottom: 30px;
+    line-height: 130%;
+    color: #ffffff;
+    font-weight: 350;
+  }
+  .career-advantages-item::before {
+    position: absolute;
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: #f2cd00;
+    border-radius: 50%;
+    left: -30px;
+    top: calc(50% - 6px);
+  }
+
+  @media screen and (max-width: 1050px) {
+    .career-info {
+      margin-left: 0;
+      max-width: 90vw;
+    }
+    .career-advantages {
+      margin-left: 0;
+      width: 90vw;
+      max-width: none;
+    }
+    .career-hero {
+      justify-content: flex-end;
+    }
+    .career-content {
+      width: 100%;
+      height: 35%;
+      justify-content: end;
+      background-image: linear-gradient(
+        270deg,
+        #222f4e 58.52%,
+        #174ac3 132.89%
+      );
+    }
+    .career-hero-title {
+      max-width: none;
+      margin: 15px auto;
+    }
+    .career-hero-descript {
+      max-width: none;
+      margin: 15px auto;
+      font-size: 16px;
+      line-height: 130%;
+      padding: 0 10px;
+    }
+    .driver-title {
+      text-wrap: wrap;
+    }
+  }
+  @media screen and (max-width: 680px) {
+    .career-content {
+      height: 50%;
+    }
+    .driver-title {
+      font-size: 22px;
+      padding: 10px 0;
+    }
+    .driver-descript {
+      line-height: 130%;
+    }
+    .career-driver::before {
+      border-top: 3px solid #f2cd00;
+      border-left: 3px solid #f2cd00;
+      top: -10px;
+      left: -10px;
+    }
+    .career-driver::after {
+      border-bottom: 3px solid #f2cd00;
+      border-right: 3px solid #f2cd00;
+      bottom: -10px;
+      right: -10px;
+    }
+    .service-title {
+      font-size: 22px;
+      padding: 10px 0;
+    }
+    .service-descript {
+      line-height: 130%;
+    }
+    .career-service::before {
+      border-top: 3px solid #f2cd00;
+      border-left: 3px solid #f2cd00;
+      top: -10px;
+      left: -10px;
+    }
+    .career-service::after {
+      border-bottom: 3px solid #f2cd00;
+      border-right: 3px solid #f2cd00;
+      bottom: -10px;
+      right: -10px;
+    }
+    .career-advantages {
+      padding: 20px;
+      width: 100vw;
+    }
+    .career-advantages-title {
+      font-size: 22px;
+    }
+    .career-advantages-item {
+      margin-bottom: 15px;
+    }
+  }
+}

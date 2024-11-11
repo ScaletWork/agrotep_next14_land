@@ -137,5 +137,30 @@
   "experience_quality": "Quality",
   "experience_speed": "Speed",
   "experience_reliable": "Reliable",
-  "experience_years": "Years of experience"
+  "experience_years": "Years of experience",
+  "phoneNumberTitle": "Phone Number",
+  "emailTitle": "Email Address",
+  "addressTitle": "Address",
+  "contactUsPage": "Have any questions? Contact us",
+  "namePlaceholder": "Name *",
+  "phonePlaceholder": "Phone Number *",
+  "subjectPlaceholder": "Subject",
+  "additionalInfoPlaceholder": "Additional Information",
+  "contactButton": "Contact Us",
+  "feedbackThanks": "Request received",
+  "career": {
+    "heroTitle": "Join Our Team",
+    "heroDescription": "At AGROTEP LLC, we value teamwork and invite talented people to realize their dreams and grow with us.",
+    "driverTitle": "International Transportation Driver",
+    "driverDescription": "AGROTEP LLC, a Ukrainian transport company, invites candidates for the position of CE category drivers. Candidates must have a CE driver's license and a responsible approach to their work duties. The main tasks will include transportation of goods on routes Ukraine-Europe or within Ukraine.",
+    "serviceTitle": "Repair Service",
+    "serviceDescription": "We invite candidates to join our team in the repair service. Candidates must have professional skills in vehicle repair and maintenance. The main responsibilities will include diagnostics, repairs, and maintenance of vehicles.",
+    "advantagesTitle": "Advantages of Working at AGROTEP",
+    "advantage1": "Long-term career prospects and official employment",
+    "advantage2": "Decent and stable salary",
+    "advantage3": "Working with like-minded individuals, mutual support, and comfortable working conditions",
+    "advantage4": "Opportunities for learning, professional development, and self-realization",
+    "advantage5": "Transparent performance evaluation system and recognition of employee achievements",
+    "advantage6": "Modern and efficient fleet that ensures reliability and comfort at work"
+  }
 }
