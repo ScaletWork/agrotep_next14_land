@@ -21,8 +21,8 @@ const Header: FC = () => {
     { text: t("aboutUs"), href: "/about-us" },
     { text: t("services"), href: "/services" },
     { text: t("trucks"), href: "/auto-park" },
-    // { text: t("careers"), href: "/careers" },
-    // { text: t("contactUs"), href: "/contact" },
+    { text: t("careers"), href: "/careers" },
+    { text: t("contactUs"), href: "/contacts" },
   ];
 
   const toggleModal = () => setModalOpen((prev) => !prev);

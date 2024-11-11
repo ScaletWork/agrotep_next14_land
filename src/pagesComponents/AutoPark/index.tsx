@@ -285,11 +285,11 @@ const AutoParkComponent: FC = () => {
               width={541}
               height={535}
               text={[
-                "Діагностичні",
-                "Зварювальні",
-                "Рихтувальні",
-                "Шиномонтажні",
-                "Мийка вантажних автомобілів",
+                t("diagnostic"),
+                t("welding"),
+                t("preparatory"),
+                t("tyre_fitting"),
+                t("truck_car_wash"),
               ]}
             />
           </div>
@@ -303,7 +303,7 @@ const AutoParkComponent: FC = () => {
               ]}
               width={541}
               height={535}
-              text={["Трали", "Крани", "Екскаватори", "Підйомники"]}
+              text={[t("trailers"), t("cranes"), t("excavators"), t("lifts")]}
             />
             <motion.div
               className="info__text"

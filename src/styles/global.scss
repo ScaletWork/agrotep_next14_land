@@ -51,7 +51,12 @@ header {
   height: 85px;
   width: 100%;
   z-index: 10;
+
   /* box-shadow: 0px 11px 10px 0px rgba(0, 0, 0, 0.75); */
+}
+
+.container.header {
+  max-width: 1920px;
 }
 .feature {
   color: #ffb404;
@@ -906,6 +911,13 @@ header.hidden {
 }
 
 /* MEDIA  */
+@media screen and (max-width: 1500px) {
+  .header {
+    .logo {
+      display: none;
+    }
+  }
+}
 @media screen and (max-width: 1320px) {
   .header {
     justify-content: space-evenly;
@@ -935,6 +947,11 @@ header.hidden {
   }
 }
 @media screen and (max-width: 1050px) {
+  .header {
+    .logo {
+      display: block;
+    }
+  }
   .burger-menu {
     display: flex;
     z-index: 12;

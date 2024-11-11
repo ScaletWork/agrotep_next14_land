@@ -9,7 +9,6 @@ const CareersComponent: FC = () => {
 
   return (
     <div className="careers-page">
-      {/* Hero section with fade-in animation */}
       <motion.section
         className="career"
         initial={{ opacity: 0 }}
@@ -25,8 +24,6 @@ const CareersComponent: FC = () => {
           </div>
         </div>
       </motion.section>
-
-      {/* Career job section with slide-in animation */}
       <section className="career-job">
         <div className="career-info">
           <motion.div
