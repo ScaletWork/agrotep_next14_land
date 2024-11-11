@@ -13,7 +13,7 @@ interface SliderProps {
   width?: number;
   height?: number;
   slidesPerView?: number;
-  text: string;
+  text: string[];
 }
 
 const Slider: FC<SliderProps> = ({
@@ -36,7 +36,7 @@ const Slider: FC<SliderProps> = ({
       {images.map((src, index) => (
         <SwiperSlide key={index}>
           <div className="swiper__overlay">
-            <h2>{text}</h2>
+            <h2>{text[index]}</h2>
           </div>
           <Image
             width={width}

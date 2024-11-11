@@ -277,22 +277,33 @@ const AutoParkComponent: FC = () => {
             <Slider
               images={[
                 "/img/autopark/slider-images/1.jpg",
-                "/img/autopark/slider-images/1.jpg",
+                "/img/autopark/slider-images/2.jpg",
+                "/img/autopark/slider-images/3.jpg",
+                "/img/autopark/slider-images/4.jpg",
+                "/img/autopark/slider-images/5.jpg",
               ]}
               width={541}
               height={535}
-              text={t("trailers")}
+              text={[
+                "Діагностичні",
+                "Зварювальні",
+                "Рихтувальні",
+                "Шиномонтажні",
+                "Мийка вантажних автомобілів",
+              ]}
             />
           </div>
           <div className="info__block">
             <Slider
               images={[
-                "/img/autopark/slider-images/1.jpg",
-                "/img/autopark/slider-images/1.jpg",
+                "/img/autopark/slider-images/9.jpg",
+                "/img/autopark/slider-images/6.jpg",
+                "/img/autopark/slider-images/7.jpg",
+                "/img/autopark/slider-images/8.jpg",
               ]}
               width={541}
               height={535}
-              text={t("trailers")}
+              text={["Трали", "Крани", "Екскаватори", "Підйомники"]}
             />
             <motion.div
               className="info__text"
