@@ -1,6 +1,6 @@
 .autopark {
   color: white;
-  background: linear-gradient(to right, #174ac3 10%, #222f4e 100%);
+  background: linear-gradient(270deg, #222f4e 58.52%, #174ac3 132.89%);
 
   &__img {
     display: flex;
@@ -10,6 +10,14 @@
     background-size: cover;
     background-position: center;
     padding: 50px 0;
+  }
+
+  h1 {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: res(36, 96);
+    color: #ffb404;
+    text-shadow: 2px 2px 4px #000000;
   }
 }
 
@@ -21,7 +29,7 @@
     align-items: center;
     gap: 40px;
     font-weight: 600;
-    font-size: res(20, 40);
+    font-size: res(18, 28);
 
     &::before {
       content: "";
@@ -34,13 +42,13 @@
   }
 
   &__block {
-    padding: 100px res(15, 60);
+    padding: 50px res(15, 60);
 
     h3 {
       font-family: "Inter", sans-serif;
       font-weight: 400;
       color: white;
-      font-size: res(36, 64);
+      font-size: res(24, 48);
       line-height: 1.2;
       text-transform: uppercase;
 
@@ -48,7 +56,7 @@
         font-family: "Lalezar", sans-serif;
         font-weight: 500;
         color: #ffb404;
-        font-size: res(64, 100);
+        font-size: res(36, 96);
         line-height: 1.2;
       }
     }
@@ -133,7 +141,7 @@
     font-family: "Inter", sans-serif;
     font-weight: 500;
     color: white;
-    font-size: res(36, 84);
+    font-size: res(24, 48);
     line-height: 1.2;
     text-transform: uppercase;
     text-align: center;
@@ -147,9 +155,9 @@
 
   &__header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 100px;
     max-width: 1920px;
     margin: 0 auto;
     padding: 0 res(15, 60);
@@ -159,7 +167,7 @@
       align-items: center;
       gap: 40px;
       font-weight: 600;
-      font-size: res(20, 40);
+      font-size: res(18, 28);
 
       &::before {
         content: "";
@@ -176,10 +184,11 @@
       display: flex;
       flex-direction: column;
       gap: 40px;
-      max-width: 900px;
+      max-width: 700px;
     }
 
     img {
+      max-width: 400px;
       height: auto;
     }
   }
@@ -208,9 +217,9 @@
       font-family: "Inter", sans-serif;
       font-weight: 700;
       color: white;
-      font-size: res(36, 64);
+      font-size: res(24, 48);
       line-height: 1.2;
-      margin-bottom: 80px;
+      margin-bottom: 40px;
       text-align: center;
     }
 
@@ -239,14 +248,14 @@
       }
 
       h5 {
-        font-size: 40px;
+        font-size: res(28, 18);
         flex: 1;
         text-align: center;
         align-self: center;
       }
 
       p {
-        font-size: 24px;
+        font-size: res(22, 12);
       }
 
       .transportation__routes_text {
@@ -324,7 +333,7 @@
   &__block {
     padding: 80px 40px;
     text-align: center;
-    background: linear-gradient(to right, #174ac3 10%, #222f4e 100%);
+    background: linear-gradient(270deg, #222f4e 58.52%, #174ac3 132.89%);
 
     h4 {
       font-size: res(24, 48);
@@ -334,7 +343,7 @@
     }
 
     p {
-      font-size: res(18, 36);
+      font-size: res(18, 28);
       font-weight: 600;
       line-height: 1.2;
     }
@@ -351,7 +360,7 @@
 }
 
 .info {
-  padding: 200px 0;
+  padding: 100px 0;
   background-image: url("/img/autopark/info_bg.jpg");
   background-size: cover;
   background-position: center;
@@ -360,7 +369,7 @@
     display: flex;
     flex-direction: column;
     gap: 100px;
-    padding: 200px res(15, 100) 100px;
+    padding: 100px res(15, 150) 100px;
     background-color: rgba(34, 47, 78, 0.5);
   }
 
@@ -392,14 +401,14 @@
   h2 {
     font-family: "Lalezar", sans-serif;
     font-weight: 500;
-    font-size: res(24, 70);
+    font-size: res(48, 70);
     line-height: 1;
 
     + span {
       font-family: "Lalezar", sans-serif;
       font-weight: 500;
       line-height: 1;
-      font-size: res(36, 200);
+      font-size: res(86, 200);
       color: #ffb404;
       text-shadow: 2px 2px 4px #000000;
     }
@@ -407,7 +416,7 @@
 
   .swiper {
     position: relative;
-    width: 541px;
+    width: 600px;
     height: 400px;
     overflow: hidden;
     margin: 0;
@@ -524,13 +533,13 @@
   }
 
   h2 {
-    font-size: 48px;
+    font-size: res(24, 48);
     line-height: 1;
     margin-bottom: 60px;
   }
 
   p {
-    font-size: 24px;
+    font-size: res(18, 24);
     line-height: 1.7;
 
     span {

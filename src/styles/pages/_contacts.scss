@@ -39,11 +39,12 @@
   .contact-info-title {
     color: #f2cd00;
     font-weight: 600;
-    font-size: 20px;
+    font-size: res(18, 24);
   }
   .contact-info-content {
     color: #ffffff;
     line-height: 150%;
+    font-size: res(12, 16);
   }
   .contact-form {
     position: relative;
@@ -131,7 +132,7 @@
       width: 100%;
     }
     .form-legend-title-back {
-      font-size: 24px;
+      font-size: res(18, 24);
       font-weight: 900;
       text-align: center;
       color: white;

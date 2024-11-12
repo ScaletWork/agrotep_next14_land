@@ -16,7 +16,7 @@ const bubbleVariants = {
       delay: i * 0.2,
       duration: 4,
       repeat: Infinity,
-      repeatType: "mirror",
+      repeatType: "mirror" as "mirror" | "loop" | "reverse",
       ease: "easeInOut",
     },
   }),
