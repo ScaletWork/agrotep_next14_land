@@ -34,7 +34,7 @@
     font-size: res(16, 22);
     line-height: 1.4;
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 1.4;
   }
 
   @include mobile {
@@ -69,7 +69,7 @@
     font-weight: 500;
     line-height: 1;
     margin-bottom: 30px;
-    line-height: 1.2;
+    line-height: 1.4;
   }
 
   p {
@@ -95,10 +95,10 @@
   p {
     font-size: res(12, 18);
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 1.4;
   }
 
-  span {
+  span.year {
     position: relative;
     display: block;
     color: #ffb404;

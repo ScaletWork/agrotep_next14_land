@@ -6,6 +6,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { useInView } from "react-intersection-observer";
 import ContactForm from "@/components/main/ContactForm";
+import useFormattedText from "@/hooks/useFormattedText";
 
 const Main: FC = () => {
   const { t } = useTranslation();
@@ -40,6 +41,10 @@ const Main: FC = () => {
       transition: { duration: 1, delay: 1.2, staggerChildren: 0.8 },
     },
   };
+  const { text1: historyText } = useFormattedText({
+    texts: [t("history_text")],
+    className: "special-span-class",
+  });
 
   return (
     <>
@@ -81,7 +86,7 @@ const Main: FC = () => {
             animate={historyTextControls}
             transition={{ duration: 1.2 }}
           >
-            {t("history_text")}
+            {historyText}
           </motion.p>
           <div className="history-img-bg"></div>
         </div>

@@ -7,6 +7,7 @@ import Logo3Svg from "@/assets/svg/AboutPage/Logo3";
 import Logo4Svg from "@/assets/svg/AboutPage/Logo4";
 import Logo5Svg from "@/assets/svg/AboutPage/Logo5";
 import Logo6Svg from "@/assets/svg/AboutPage/Logo6";
+import useFormattedText from "@/hooks/useFormattedText";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FC } from "react";
@@ -48,6 +49,17 @@ const AboutUsComponent: FC = () => {
     },
   ];
 
+  const descriptions = historyData.map((data) => data.description);
+  const formattedDescriptions = useFormattedText({
+    texts: descriptions,
+    className: "special-span-class",
+  });
+
+  const { text1: formattedLeaderText } = useFormattedText({
+    texts: [t("aboutUsInfoDescription")],
+    className: "special-span-class",
+  });
+
   const logosList = [
     t("logosList.quality"),
     t("logosList.reliability"),
@@ -85,6 +97,8 @@ const AboutUsComponent: FC = () => {
     <Logo6Svg />,
   ];
 
+  console.log(formattedDescriptions);
+
   const renderHistory = () =>
     historyData.map((item, index) => (
       <motion.div
@@ -97,16 +111,16 @@ const AboutUsComponent: FC = () => {
       >
         <div>
           {index % 2 === 0 ? (
-            <p>{item.description}</p>
+            <p>{formattedDescriptions[`text${index + 1}`]}</p>
           ) : (
-            <span>{item.year}</span>
+            <span className="year">{item.year}</span>
           )}
         </div>
         <div>
           {index % 2 === 0 ? (
-            <span>{item.year}</span>
+            <span className="year">{item.year}</span>
           ) : (
-            <p>{item.description}</p>
+            <p>{formattedDescriptions[`text${index + 1}`]}</p>
           )}
         </div>
       </motion.div>
@@ -170,7 +184,7 @@ const AboutUsComponent: FC = () => {
         />
         <div className="about-us-info__text">
           <h3>{t("aboutUsInfoTitle")}</h3>
-          <p>{t("aboutUsInfoDescription")}</p>
+          <p>{formattedLeaderText}</p>
         </div>
       </motion.section>
       <motion.section

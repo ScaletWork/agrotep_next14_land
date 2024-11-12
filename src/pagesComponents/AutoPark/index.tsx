@@ -5,6 +5,7 @@ import Image from "next/image";
 import Slider from "@/components/autopark/Slider";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import useFormattedText from "@/hooks/useFormattedText";
 
 interface ServiceItem {
   count: string;
@@ -21,6 +22,11 @@ interface ServiceLists {
 
 const AutoParkComponent: FC = () => {
   const { t } = useTranslation();
+
+  const { text1: historyText } = useFormattedText({
+    texts: [t("agrotep_class_description")],
+    className: "special-span-class",
+  });
 
   const serviceLists: ServiceLists = {
     first: {
@@ -335,7 +341,7 @@ const AutoParkComponent: FC = () => {
             transition={{ duration: 1 }}
             viewport={{ once: true }}
           >
-            {t("agrotep_class_description")}
+            {historyText}
           </motion.p>
         </div>
         <div className="agrotepClass__block">
