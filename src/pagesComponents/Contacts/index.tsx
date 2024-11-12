@@ -7,21 +7,6 @@ import { useTranslation } from "react-i18next";
 const scriptURL =
   "https://script.google.com/macros/s/AKfycbxU6W56jKgJqc7LY53iq0Jj5Wr3SUQH5KQro9lRTNkBmFLZNm6x_nvFWsGL-r91tfwu/exec";
 
-const bubbleVariants = {
-  visible: (i: number) => ({
-    zIndex: 0,
-    x: ["0%", "20%", "-20%", "0%"],
-    y: ["0%", "-20%", "20%", "0%"],
-    transition: {
-      delay: i * 0.2,
-      duration: 4,
-      repeat: Infinity,
-      repeatType: "mirror" as "mirror" | "loop" | "reverse",
-      ease: "easeInOut",
-    },
-  }),
-};
-
 const formVariants = {
   hidden: { opacity: 0, x: 50 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } },
@@ -162,25 +147,7 @@ const ContactsComponent: FC = () => {
           </div>
         </motion.div>
       </div>
-      {[...Array(5)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="bubble"
-          custom={i}
-          initial="hidden"
-          animate="visible"
-          variants={bubbleVariants}
-          style={{
-            position: "absolute",
-            top: `${Math.random() * 100}%`,
-            left: `${Math.random() * 100}%`,
-            width: "30px",
-            height: "30px",
-            backgroundColor: "rgba(0, 123, 255, 0.2)",
-            borderRadius: "50%",
-          }}
-        />
-      ))}
+
       {showThanks && (
         <span className="feedback-thanks">
           <img

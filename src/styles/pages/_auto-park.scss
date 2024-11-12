@@ -29,7 +29,7 @@
     align-items: center;
     gap: 40px;
     font-weight: 600;
-    font-size: res(18, 28);
+    font-size: res(16, 22);
 
     &::before {
       content: "";
@@ -42,20 +42,24 @@
   }
 
   &__block {
-    padding: 50px res(15, 60);
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px res(15, 60);
 
     h3 {
       font-family: "Inter", sans-serif;
       font-weight: 400;
       color: white;
-      font-size: res(24, 48);
+      font-size: res(24, 68);
       line-height: 1.2;
       text-transform: uppercase;
+      margin-left: 30px;
 
       span {
         font-family: "Lalezar", sans-serif;
         font-weight: 500;
         color: #ffb404;
+        text-shadow: 2px 2px 4px #000000;
         font-size: res(36, 96);
         line-height: 1.2;
       }
@@ -100,7 +104,7 @@
 
     img {
       margin-left: auto;
-      max-width: 100%;
+      max-width: 35%;
     }
 
     &_reverse {
@@ -124,8 +128,8 @@
     }
 
     &__block {
-      padding-top: 50px;
-      padding-bottom: 50px;
+      padding-top: 70px;
+      padding-bottom: 0;
       h3 {
         text-align: center;
         margin-bottom: 20px;
@@ -188,7 +192,7 @@
     }
 
     img {
-      max-width: 400px;
+      max-width: 265px;
       height: auto;
     }
   }
@@ -207,9 +211,15 @@
       justify-content: center;
 
       div {
-        width: 6px;
+        width: 3px;
         height: 100%;
         background-color: #ffb404;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 180, 4, 0),
+          rgb(255, 180, 4) 50%,
+          rgba(255, 180, 4, 0) 100%
+        );
       }
     }
 
@@ -217,10 +227,10 @@
       font-family: "Inter", sans-serif;
       font-weight: 700;
       color: white;
-      font-size: res(24, 48);
+      font-size: res(18, 32);
       line-height: 1.2;
       margin-bottom: 40px;
-      text-align: center;
+      text-align: left;
     }
 
     img {
@@ -235,6 +245,7 @@
       display: flex;
       flex-direction: column;
       font-weight: 500;
+      padding-left: 20px;
 
       li {
         display: flex;
@@ -248,18 +259,20 @@
       }
 
       h5 {
-        font-size: res(28, 18);
-        flex: 1;
+        font-size: res(16, 22);
+        flex: 1.4;
         text-align: center;
         align-self: center;
+        flex: 1 0 10%;
       }
 
       p {
-        font-size: res(22, 12);
+        font-size: res(14, 20);
+        line-height: 1.4;
       }
 
       .transportation__routes_text {
-        flex: 1 0 40%;
+        flex: 1 0 60%;
         align-self: center;
       }
     }
@@ -320,7 +333,7 @@
     border: 1px solid #000;
     justify-content: center;
     align-items: center;
-    padding: 50px;
+    padding: 30px;
     min-height: 150px;
   }
 
@@ -336,14 +349,14 @@
     background: linear-gradient(270deg, #222f4e 58.52%, #174ac3 132.89%);
 
     h4 {
-      font-size: res(24, 48);
+      font-size: res(18, 32);
       font-weight: 600;
       line-height: 1.2;
       margin-bottom: 30px;
     }
 
     p {
-      font-size: res(18, 28);
+      font-size: res(16, 22);
       font-weight: 600;
       line-height: 1.2;
     }
@@ -404,11 +417,15 @@
     font-size: res(48, 70);
     line-height: 1;
 
+    &:last-child {
+      margin-top: -50px;
+    }
+
     + span {
       font-family: "Lalezar", sans-serif;
       font-weight: 500;
-      line-height: 1;
-      font-size: res(86, 200);
+      line-height: 77%;
+      font-size: res(86, 400);
       color: #ffb404;
       text-shadow: 2px 2px 4px #000000;
     }
@@ -509,9 +526,10 @@
   align-items: center;
   padding: 100px res(15, 150) 200px;
   font-weight: 600;
-  gap: 60px;
 
   &__block {
+    align-items: flex-end;
+
     &:first-child {
       max-width: 800px;
       min-width: 500px;
@@ -526,21 +544,21 @@
     }
 
     img {
-      width: 100%;
+      width: 70%;
       height: auto;
       flex: 1;
     }
   }
 
   h2 {
-    font-size: res(24, 48);
+    font-size: res(18, 32);
     line-height: 1;
     margin-bottom: 60px;
   }
 
   p {
-    font-size: res(18, 24);
-    line-height: 1.7;
+    font-size: res(12, 18);
+    line-height: 2.4;
 
     span {
       color: #ffb404;
@@ -551,6 +569,10 @@
     padding-top: 50px;
     padding-bottom: 100px;
     flex-direction: column;
+
+    img {
+      width: 100%;
+    }
 
     &__block {
       &:first-child {

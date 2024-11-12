@@ -14,6 +14,7 @@
     font-size: res(36, 96);
     max-width: 700px;
     padding: 100px res(15, 120);
+    text-shadow: 2px 2px 4px #000000;
   }
 }
 
@@ -23,13 +24,15 @@
 
   h2 {
     font-weight: 600;
-    font-size: res(24, 48);
-    margin-top: 40px;
+    font-size: res(24, 32);
+    line-height: 1.4;
+    margin-top: 20px;
     margin-bottom: 40px;
   }
 
   p {
-    font-size: res(18, 28);
+    font-size: res(16, 22);
+    line-height: 1.4;
     font-weight: 600;
     line-height: 1.2;
   }
@@ -55,27 +58,32 @@
   }
 
   img {
-    width: 100%;
+    width: 50%;
     height: auto;
     flex: 1;
   }
 
   h3 {
     font-family: "Inter", sans-serif;
-    font-size: res(24, 48);
+    font-size: res(18, 32);
     font-weight: 500;
     line-height: 1;
     margin-bottom: 30px;
+    line-height: 1.2;
   }
 
   p {
     font-weight: 600;
-    font-size: res(18, 28);
-    line-height: 1.2;
+    font-size: res(12, 18);
+    line-height: 1.4;
   }
 
   @include mobile {
     flex-direction: column;
+
+    img {
+      width: 100%;
+    }
   }
 }
 
@@ -85,7 +93,7 @@
   padding: 100px res(25, 60) 0;
 
   p {
-    font-size: res(12, 22);
+    font-size: res(12, 18);
     font-weight: 600;
     line-height: 1.2;
   }
@@ -227,7 +235,7 @@
 
   h3 {
     font-family: "Inter";
-    font-size: res(18, 28);
+    font-size: res(16, 22);
     font-weight: 500;
     text-align: center;
     margin-bottom: 50px;
@@ -261,7 +269,7 @@
   }
 
   span {
-    font-size: res(12, 22);
+    font-size: res(12, 18);
   }
 
   @include mobile {
