@@ -16,6 +16,11 @@
       height: 100%;
       object-fit: contain;
     }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #ffb404;
+    }
   }
 }
 
@@ -151,7 +156,7 @@
     ul {
       width: 100%;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
     }
 
     li {
@@ -166,18 +171,20 @@
       }
 
       span {
+        text-align: center;
+
         &:first-child {
           font-family: "Inter", sans-serif;
           line-height: 1;
           font-weight: 700;
-          font-size: res(36, 96);
+          font-size: res(18, 56);
         }
 
         &:last-child {
           font-family: "Inter", sans-serif;
           font-weight: 600;
           color: #afafaf;
-          font-size: res(16, 22);
+          font-size: res(12, 18);
           margin-top: 20px;
         }
 
@@ -200,16 +207,12 @@
       }
 
       li {
+        margin-bottom: 40px;
         &:first-child {
           margin-bottom: 40px;
         }
-
-        &:nth-last-child(3) {
-          margin-bottom: 40px;
-        }
-
-        &:nth-last-child(3) {
-          border: none;
+        &:last-child {
+          margin-bottom: none;
         }
       }
     }

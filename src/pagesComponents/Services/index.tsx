@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { motion } from "framer-motion"; // Импортируем framer-motion
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
@@ -186,7 +186,7 @@ const ServicesComponent: FC = () => {
                     startOnMount={false}
                     delay={2}
                     start={0}
-                    end={13000}
+                    end={250}
                     duration={2}
                     separator=" "
                   />
@@ -207,7 +207,7 @@ const ServicesComponent: FC = () => {
                     startOnMount={false}
                     delay={2}
                     start={0}
-                    end={7}
+                    end={30}
                     duration={2}
                     separator=" "
                   />
@@ -228,7 +228,7 @@ const ServicesComponent: FC = () => {
                     startOnMount={false}
                     delay={2}
                     start={0}
-                    end={750}
+                    end={3000}
                     duration={2}
                     separator=" "
                   />
@@ -249,7 +249,7 @@ const ServicesComponent: FC = () => {
                     startOnMount={false}
                     delay={2}
                     start={0}
-                    end={450}
+                    end={250000}
                     duration={2}
                     separator=" "
                   />
@@ -257,6 +257,27 @@ const ServicesComponent: FC = () => {
                 <b>+</b>
               </span>
               <span>{t("loyalClients")}</span>
+            </motion.li>
+            <motion.li
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 2.2 }}
+              viewport={{ once: true }}
+            >
+              <span>
+                {inView && (
+                  <CountUp
+                    startOnMount={false}
+                    delay={2}
+                    start={0}
+                    end={230000}
+                    duration={2}
+                    separator=" "
+                  />
+                )}
+                <b>+</b>
+              </span>
+              <span>{t("transportationMonthly")}</span>
             </motion.li>
           </ul>
         </motion.div>
@@ -268,7 +289,9 @@ const ServicesComponent: FC = () => {
         <Swiper
           slidesPerView={1}
           autoplay={{ delay: 5000 }}
-          modules={[Autoplay]}
+          modules={[Autoplay, Navigation, Pagination]}
+          navigation
+          pagination={{ clickable: true }}
         >
           <SwiperSlide>
             <motion.img

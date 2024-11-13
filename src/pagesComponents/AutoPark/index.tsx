@@ -28,6 +28,11 @@ const AutoParkComponent: FC = () => {
     className: "special-span-class",
   });
 
+  const { text1: transportationText } = useFormattedText({
+    texts: [t("dangerous_transportation")],
+    className: "special-span-class",
+  });
+
   const serviceLists: ServiceLists = {
     first: {
       count: "250",
@@ -209,7 +214,7 @@ const AutoParkComponent: FC = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          {t("dangerous_transportation")}
+          {transportationText}
         </motion.h3>
         <div className="transportation__header">
           <Image

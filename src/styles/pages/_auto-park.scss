@@ -145,7 +145,7 @@
     font-family: "Inter", sans-serif;
     font-weight: 500;
     color: white;
-    font-size: res(24, 48);
+    font-size: res(18, 32);
     line-height: 1.4;
     text-transform: uppercase;
     text-align: center;
@@ -171,7 +171,7 @@
       align-items: center;
       gap: 40px;
       font-weight: 600;
-      font-size: res(18, 28);
+      font-size: res(16, 22);
 
       &::before {
         content: "";
@@ -280,12 +280,19 @@
 
   @include mobile {
     margin-top: 50px;
+    &__text {
+      h4 {
+        text-align: center;
+      }
+    }
     &__header {
+      margin-top: 60px;
       flex-direction: column;
+      gap: 30px;
 
       img {
         width: 100%;
-        max-width: 400px;
+        max-width: 200px;
       }
     }
 
@@ -344,9 +351,10 @@
   }
 
   &__block {
-    padding: 80px 40px;
+    padding: 40px 40px;
     text-align: center;
     background: linear-gradient(270deg, #222f4e 58.52%, #174ac3 132.89%);
+    margin: auto 0;
 
     h4 {
       font-size: res(18, 32);
