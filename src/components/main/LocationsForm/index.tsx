@@ -32,6 +32,7 @@ const LocationsForm: FC = () => {
 
   return (
     <section className="locations">
+      <div className="locations__overlay"></div>
       <img src="/img/main/map.jpg" alt="" className="location-map" />
       <form
         onSubmit={handleSubmit}

@@ -956,6 +956,49 @@ header.hidden {
       display: block;
     }
   }
+
+  .locations {
+    position: relative;
+    padding: 0;
+
+    &__overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    input {
+      width: 100%;
+    }
+  }
+
+  .location-legend {
+    color: #fff;
+  }
+
+  .location-map {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .location-form {
+    position: relative;
+    z-index: 1;
+    margin: 40px;
+    width: 100%;
+  }
+
+  .exp-years-img {
+    font-size: 250px !important;
+  }
+  .exp-years-img2 {
+    font-size: 36px;
+  }
   .burger-menu {
     display: flex;
     z-index: 12;
@@ -993,7 +1036,10 @@ header.hidden {
     background-color: rgba(45, 59, 77, 0.8);
   }
   .exp-bg {
-    flex-direction: column;
+    text-align: center;
+  }
+  .exp-bg-text {
+    font-size: 56px;
   }
   .exp-years {
     margin-right: 0;
