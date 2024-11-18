@@ -20,11 +20,13 @@ const ServicesComponent: FC = () => {
       t("transportationTypes"),
       t("refrigeratorAdvantages"),
       t("anyRefrigeratorList"),
+      t("anyAdditionalRefList"),
     ],
     second: [
-      t("transportationTypes"),
-      t("refrigeratorAdvantages"),
-      t("anyRefrigeratorList"),
+      t("transportationTypes2"),
+      t("refrigeratorAdvantages2"),
+      t("anyRefrigeratorList2"),
+      t("anyAdditionalRefList2"),
     ],
   };
 
@@ -171,7 +173,9 @@ const ServicesComponent: FC = () => {
           transition={{ duration: 1, delay: 1.2 }}
           viewport={{ once: true }}
         >
-          <h3>{t("aboutUsInNumbers")}</h3>
+          <h3 style={{ textTransform: "uppercase" }}>
+            {t("aboutUsInNumbers")}
+          </h3>
           <ul>
             <motion.li
               initial={{ opacity: 0 }}
@@ -212,7 +216,7 @@ const ServicesComponent: FC = () => {
                     separator=" "
                   />
                 )}
-                <b>+</b>
+                <b></b>
               </span>
               <span>{t("yearsOfExperience")}</span>
             </motion.li>

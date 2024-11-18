@@ -382,6 +382,12 @@
 
       .about-us-slider__element {
         flex-direction: column;
+
+        &_swap {
+          img {
+            width: 100%;
+          }
+        }
       }
 
       .swiper {

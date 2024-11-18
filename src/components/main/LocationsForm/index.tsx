@@ -1,10 +1,12 @@
 "use client";
 
 import { FC, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const LocationsForm: FC = () => {
   const [loading, setLoading] = useState(false);
   const [thankYouVisible, setThankYouVisible] = useState(false);
+  const { t } = useTranslation();
   const scriptURL =
     "https://script.google.com/macros/s/AKfycbxU6W56jKgJqc7LY53iq0Jj5Wr3SUQH5KQro9lRTNkBmFLZNm6x_nvFWsGL-r91tfwu/exec";
 
@@ -41,44 +43,43 @@ const LocationsForm: FC = () => {
       >
         <div className="about-info">
           <legend className="form-legend form-legend-title location-legend">
-            Розкажіть про вантаж — ми знайдемо рішення!
+            {t("formTitle")}
           </legend>
           <input
             type="text"
             name="name"
-            placeholder="Ім'я *"
+            placeholder={t("namePlaceholder")}
             className="input location-input"
             required
           />
           <input
             type="text"
             name="phone"
-            placeholder="Номер телефону *"
+            placeholder={t("phonePlaceholder")}
             className="input location-input"
             required
           />
-
           <input
             type="text"
             name="upload-location"
-            placeholder="Місце завантаження"
+            placeholder={t("pickupPlaceholder")}
             className="input location-input"
           />
           <input
             type="text"
             name="unload-location"
-            placeholder="Місце розвантаження"
+            placeholder={t("deliveryPlaceholder")}
             className="input location-input"
           />
         </div>
         <textarea
           name="message"
-          placeholder="Додаткова інформація"
+          placeholder={t("additionalInfoPlaceholder")}
           className="comment location-comment"
           required
         ></textarea>
         <button className="request-btn" type="submit" disabled={loading}>
-          {loading ? "Відправляється..." : "Зв'язатись"}
+          {loading ? t("loadingButton") : t("submitButton")}
         </button>
         {thankYouVisible && (
           <div className="feedback-thanks show">
@@ -87,7 +88,7 @@ const LocationsForm: FC = () => {
               alt=""
               style={{ width: 40, marginRight: 10 }}
             />
-            Request received
+            {t("thankYouMessage")}
           </div>
         )}
       </form>

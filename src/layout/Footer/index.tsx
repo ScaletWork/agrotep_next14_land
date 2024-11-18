@@ -39,7 +39,7 @@ const Footer: FC = () => {
           <h4 className="footer-card-title">{t("contactUs")}</h4>
           <div className="footer-card-row">
             <h5 className="card-row-title">{t("address")}:</h5>
-            <p className="card-row-info">м. Київ, вул. Роберта Лісовського 8</p>
+            <p className="card-row-info">{t("address_text")}</p>
           </div>
           <div className="footer-card-row">
             <h5 className="card-row-title">{t("phoneNumbers")}:</h5>

@@ -17,6 +17,7 @@ const Main: FC = () => {
   const historyTextControls = useAnimation();
   const [isModalOpen, setModalOpen] = useState(false);
   const toggleModal = () => setModalOpen((prev) => !prev);
+  const { i18n } = useTranslation();
 
   useEffect(() => {
     if (historyInView) {
@@ -50,14 +51,25 @@ const Main: FC = () => {
     <>
       <section className="hero">
         <div className="hero-content container">
-          <motion.img
-            src="/img/main/name.png"
-            alt=""
-            className="hero-name"
-            initial={{ y: "-175%", opacity: 0 }}
-            animate={{ y: "0%", opacity: 1 }}
-            transition={{ duration: 1.2 }}
-          />
+          {i18n.language === "en" ? (
+            <motion.img
+              src="/img/main/logo_eng.png"
+              alt=""
+              className="hero-name"
+              initial={{ y: "-175%", opacity: 0 }}
+              animate={{ y: "0%", opacity: 1 }}
+              transition={{ duration: 1.2 }}
+            />
+          ) : (
+            <motion.img
+              src="/img/main/name.png"
+              alt=""
+              className="hero-name"
+              initial={{ y: "-175%", opacity: 0 }}
+              animate={{ y: "0%", opacity: 1 }}
+              transition={{ duration: 1.2 }}
+            />
+          )}
           <motion.h1
             className="hero-title"
             initial={{ y: "-175%", opacity: 0 }}

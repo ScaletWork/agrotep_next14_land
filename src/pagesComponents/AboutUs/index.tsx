@@ -28,7 +28,7 @@ const AboutUsComponent: FC = () => {
       description: t("historyData.1997"),
     },
     {
-      year: "2005",
+      year: "2004",
       description: t("historyData.2005"),
     },
     {

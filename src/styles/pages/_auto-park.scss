@@ -65,6 +65,15 @@
       }
     }
 
+    &_2 {
+      img {
+        margin-left: initial !important;
+      }
+      .service__list {
+        max-width: 500px;
+      }
+    }
+
     &_3 {
       img {
         flex: 1;

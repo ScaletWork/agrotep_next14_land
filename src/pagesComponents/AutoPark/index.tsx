@@ -127,7 +127,7 @@ const AutoParkComponent: FC = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                {item}
+                <span style={{ flex: 1 }}>{item}</span>
               </motion.li>
             ))}
           </ul>
@@ -204,8 +204,8 @@ const AutoParkComponent: FC = () => {
       </motion.div>
       <section className="service">
         {renderServiceBlock(false, serviceLists.first, 1)}
-        {renderServiceBlock(true, serviceLists.second, 2)}
-        {renderServiceBlock(false, serviceLists.third, 3)}
+        {renderServiceBlock(true, serviceLists.third, 2)}
+        {renderServiceBlock(false, serviceLists.second, 3)}
       </section>
       <section className="transportation">
         <motion.h3
