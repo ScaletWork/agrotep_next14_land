@@ -6,6 +6,7 @@ import Slider from "@/components/autopark/Slider";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import useFormattedText from "@/hooks/useFormattedText";
+import GlobeSvg from "@/assets/svg/Autopark/Globe";
 
 interface ServiceItem {
   count: string;
@@ -226,12 +227,7 @@ const AutoParkComponent: FC = () => {
           <ul>{renderTransportationBlock()}</ul>
         </div>
         <div className="transportation__routes">
-          <Image
-            height={800}
-            width={1200}
-            src="/img/autopark/world-star.png"
-            alt={t("start_globe")}
-          />
+          <GlobeSvg />
           <motion.div
             className="transportation__text"
             initial={{ opacity: 0 }}

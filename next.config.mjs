@@ -2,6 +2,8 @@
 const nextConfig = {
   images: { unoptimized: true },
 
+  // For Build version
+
   // output: "export",
   // basePath: "/Agrotep",
   // assetPrefix: "/Agrotep/",

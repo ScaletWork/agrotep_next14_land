@@ -200,9 +200,9 @@
       max-width: 700px;
     }
 
-    img {
+    svg {
       max-width: 265px;
-      height: auto;
+      max-height: 700px;
     }
   }
 
@@ -299,7 +299,7 @@
       flex-direction: column;
       gap: 30px;
 
-      img {
+      svg {
         width: 100%;
         max-width: 200px;
       }
@@ -325,7 +325,7 @@
         }
       }
 
-      img {
+      svg {
         display: none;
       }
     }
