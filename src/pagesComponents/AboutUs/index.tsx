@@ -86,6 +86,12 @@ const AboutUsComponent: FC = () => {
       text: t("sliderList.3.text"),
       img: "/img/about/slider/3.png",
     },
+    {
+      title: "",
+      text: t("sliderList.4.text"),
+      img: "/img/about/slider/4.png",
+      className: "about-us-slider__element_swap center",
+    },
   ];
 
   const logosSvgList = [
@@ -210,6 +216,7 @@ const AboutUsComponent: FC = () => {
             slidesPerView={1.8}
             slidesPerGroup={1}
             spaceBetween={110}
+            centeredSlides
             navigation
             autoplay={{ delay: 10000 }}
             pagination={{ clickable: true }}
