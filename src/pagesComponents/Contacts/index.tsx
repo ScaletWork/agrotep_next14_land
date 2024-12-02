@@ -84,9 +84,7 @@ const ContactsComponent: FC = () => {
             />
             <div className="contact-info-wrap">
               <h4 className="contact-info-title">{t("addressTitle")}</h4>
-              <span className="contact-info-content">
-                м. Київ, вул. Роберта Лісовського 8
-              </span>
+              <span className="contact-info-content">{t("address_text")}</span>
             </div>
           </div>
         </motion.div>

@@ -27,6 +27,34 @@ const Header: FC = () => {
 
   const toggleModal = () => setModalOpen((prev) => !prev);
 
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  // Функция для отслеживания прокрутки
+  const handleScroll = () => {
+    if (typeof window !== "undefined") {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY) {
+        setShowHeader(false);
+      } else {
+        setShowHeader(true);
+      }
+
+      setLastScrollY(window.scrollY);
+    }
+  };
+
+  useEffect(() => {
+    // Добавляем слушатель события прокрутки
+    window.addEventListener("scroll", handleScroll);
+
+    // Убираем слушатель при размонтировании компонента
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
   const handleLanguageSwitch = (
     e: React.MouseEvent<HTMLAnchorElement>,
     lang: string
@@ -101,7 +129,7 @@ const Header: FC = () => {
   };
 
   return (
-    <header>
+    <header className={`header ${showHeader ? "show" : "hide"}`}>
       <div className="container header">
         <Link className="logo" href="/">
           <motion.img

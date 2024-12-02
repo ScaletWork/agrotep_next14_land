@@ -326,16 +326,6 @@ const ServicesComponent: FC = () => {
           </SwiperSlide>
           <SwiperSlide>
             <motion.img
-              src={"/img/services/bg_slider/3.jpg"}
-              alt={t("slide")}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-              viewport={{ once: true }}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <motion.img
               src={"/img/services/bg_slider/4.jpg"}
               alt={t("slide")}
               initial={{ opacity: 0 }}

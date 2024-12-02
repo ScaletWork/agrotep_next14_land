@@ -20,6 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body id="__next">
         <LocalizationWrapper>
+          <div style={{ minHeight: "85px", backgroundColor: "#293B5C" }}></div>
           <Header />
           <main>{children}</main>
           <Footer />
