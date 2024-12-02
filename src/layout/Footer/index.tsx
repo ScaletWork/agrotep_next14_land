@@ -47,7 +47,7 @@ const Footer: FC = () => {
             <p className="card-row-info">+ 38 (050) 206 64 50</p>
           </div>
           <div className="footer-card-row">
-            <h5 className="card-row-title">{t("email")}:</h5>
+            <h5 className="card-row-title">{t("email2")}:</h5>
             <p className="card-row-info">ua@agrotep.com</p>
             <p className="card-row-info">agrotep@agrotep.com</p>
           </div>

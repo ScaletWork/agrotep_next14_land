@@ -25,6 +25,7 @@
 }
 
 .services-main {
+  background-color: #222f4e;
   position: relative;
 
   .swiper {
@@ -112,11 +113,22 @@
   }
 
   &__list {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: res(15, 60);
     margin-top: 100px;
+    padding: res(15, 60);
+
+    h3 {
+      font-family: "Inter", sans-serif;
+      line-height: 1;
+      font-weight: 500;
+      font-size: res(18, 32);
+      margin-bottom: 30px;
+    }
+
+    &--wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
     ul {
       display: flex;
@@ -198,7 +210,14 @@
   @include mobile {
     &__list {
       margin-top: 40px;
-      flex-direction: column;
+
+      ul {
+        width: 100%;
+      }
+
+      &--wrapper {
+        flex-direction: column;
+      }
     }
 
     &__numbers {

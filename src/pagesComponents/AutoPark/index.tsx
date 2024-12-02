@@ -219,8 +219,8 @@ const AutoParkComponent: FC = () => {
         </motion.h3>
         <div className="transportation__header">
           <Image
-            width={500}
-            height={500}
+            width={300}
+            height={300}
             src="/img/autopark/danger.png"
             alt={t("danger_sign")}
           />

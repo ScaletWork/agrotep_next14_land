@@ -86,13 +86,13 @@ const ServicesComponent: FC = () => {
   return (
     <div className="services">
       <section className="services-main">
-        <div className="services-main__overlay"></div>
         <Swiper
           slidesPerView={1}
           autoplay={{ delay: 5000 }}
           modules={[Autoplay]}
         >
           <SwiperSlide>
+            <div className="services-main__overlay"></div>
             <motion.img
               src={"/img/services/bg_slider/1.jpg"}
               alt={t("slide")}
@@ -103,6 +103,7 @@ const ServicesComponent: FC = () => {
             />
           </SwiperSlide>
           <SwiperSlide>
+            <div className="services-main__overlay"></div>
             <motion.img
               src={"/img/services/bg_slider/2.jpg"}
               alt={t("slide")}
@@ -113,6 +114,7 @@ const ServicesComponent: FC = () => {
             />
           </SwiperSlide>
           <SwiperSlide>
+            <div className="services-main__overlay"></div>
             <motion.img
               src={"/img/services/bg_slider/3.jpg"}
               alt={t("slide")}
@@ -123,6 +125,7 @@ const ServicesComponent: FC = () => {
             />
           </SwiperSlide>
           <SwiperSlide>
+            <div className="services-main__overlay"></div>
             <motion.img
               src={"/img/services/bg_slider/4.jpg"}
               alt={t("slide")}
@@ -156,6 +159,7 @@ const ServicesComponent: FC = () => {
           <h2>250</h2>
           <h3>{t("Trucks")}</h3>
         </motion.div>
+
         <motion.div
           className="services-info__list"
           initial={{ opacity: 0 }}
@@ -163,8 +167,11 @@ const ServicesComponent: FC = () => {
           transition={{ duration: 1, delay: 1.2 }}
           viewport={{ once: true }}
         >
-          <ul>{renderServiceList(servicesLists.first)}</ul>
-          <ul>{renderServiceList(servicesLists.second)}</ul>
+          <h3 style={{ textTransform: "uppercase" }}>{t("weTransfer")}</h3>
+          <div className="services-info__list--wrapper">
+            <ul>{renderServiceList(servicesLists.first)}</ul>
+            <ul>{renderServiceList(servicesLists.second)}</ul>
+          </div>
         </motion.div>
         <motion.div
           className="services-info__numbers"
@@ -216,7 +223,7 @@ const ServicesComponent: FC = () => {
                     separator=" "
                   />
                 )}
-                <b></b>
+                <b>+</b>
               </span>
               <span>{t("yearsOfExperience")}</span>
             </motion.li>
