@@ -68,17 +68,11 @@ header {
   }
 
   &.hide {
-    transform: translateY(-100%); /* Скроем хедер */
     opacity: 0;
   }
 
   &.show {
-    transform: translateY(0); /* Покажем хедер */
     opacity: 1;
-  }
-
-  @include mobile {
-    transform: initial !important;
   }
 
   /* box-shadow: 0px 11px 10px 0px rgba(0, 0, 0, 0.75); */
