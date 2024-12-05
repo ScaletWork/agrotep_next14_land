@@ -70,7 +70,11 @@ const Footer: FC = () => {
               target="_blank"
               className="social-link instagram"
             ></a>
-            <a href="" target="_blank" className="social-link linkedin"></a>
+            <a
+              href="https://ua.linkedin.com/company/agrotep"
+              target="_blank"
+              className="social-link linkedin"
+            ></a>
           </div>
           <a className="logo" href="index.html">
             <img className="logo-img" src="/img/main/logo.svg" alt="" />
