@@ -55,10 +55,22 @@ const Footer: FC = () => {
         <div className="footer-card">
           <h4 className="footer-card-title">{t("socialMedia")}</h4>
           <div className="footer-socials">
-            <a href="" className="social-link youtube"></a>
-            <a href="" className="social-link facebook"></a>
-            <a href="" className="social-link instagram"></a>
-            <a href="" className="social-link linkedin"></a>
+            <a
+              href="https://www.youtube.com/@agrotep6651/community"
+              target="_blank"
+              className="social-link youtube"
+            ></a>
+            <a
+              href="https://www.facebook.com/agrotep/?locale=uk_UA"
+              target="_blank"
+              className="social-link facebook"
+            ></a>
+            <a
+              href="https://www.instagram.com/agrotep_ltd/"
+              target="_blank"
+              className="social-link instagram"
+            ></a>
+            <a href="" target="_blank" className="social-link linkedin"></a>
           </div>
           <a className="logo" href="index.html">
             <img className="logo-img" src="/img/main/logo.svg" alt="" />
