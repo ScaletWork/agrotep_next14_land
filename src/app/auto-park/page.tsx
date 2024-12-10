@@ -1,8 +1,8 @@
 import ServicesComponent from "@/pagesComponents/Services";
 import { FC } from "react";
 
-const Services: FC = () => {
+const AutoPark: FC = () => {
   return <ServicesComponent />;
 };
 
-export default Services;
+export default AutoPark;

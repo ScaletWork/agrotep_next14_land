@@ -186,6 +186,31 @@ const Header: FC = () => {
                     </Link>
                   </motion.li>
                 ))}
+                <motion.li
+                  className="lang-menu mobile"
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.9, delay: 1.0 }}
+                >
+                  <motion.a
+                    href="#"
+                    className="lang"
+                    variants={langButtonVariants}
+                    animate={activeLang === "UA" ? "active" : "inactive"}
+                    onClick={(e) => handleLanguageSwitch(e, "UA")}
+                  >
+                    <span>UA</span>
+                  </motion.a>
+                  <motion.a
+                    href="#"
+                    className="active-lang lang"
+                    variants={langButtonVariants}
+                    animate={activeLang === "EN" ? "active" : "inactive"}
+                    onClick={(e) => handleLanguageSwitch(e, "EN")}
+                  >
+                    <span>EN</span>
+                  </motion.a>
+                </motion.li>
               </ul>
             </div>
           ) : (

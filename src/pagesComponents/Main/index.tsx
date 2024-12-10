@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 import { useInView } from "react-intersection-observer";
 import ContactForm from "@/components/main/ContactForm";
 import useFormattedText from "@/hooks/useFormattedText";
+import Image from "next/image";
 
 const Main: FC = () => {
   const { t } = useTranslation();
@@ -100,6 +101,13 @@ const Main: FC = () => {
           >
             {historyText}
           </motion.p>
+          <Image
+            src="/img/main/mobile_cars.png"
+            alt=""
+            width={300}
+            height={300}
+            className="history-img-mobile"
+          />
           <div className="history-img-bg"></div>
         </div>
       </section>
