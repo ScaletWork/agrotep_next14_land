@@ -1,10 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: { unoptimized: true },
-  trailingSlash: true,
 
-  // For Build version
+  // For hosting
+  // output: "export",
+  // trailingSlash: true,
 
+  // For git
   // output: "export",
   // basePath: "/Agrotep",
   // assetPrefix: "/Agrotep/",

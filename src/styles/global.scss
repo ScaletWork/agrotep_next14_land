@@ -1135,7 +1135,8 @@ header.hidden {
     width: 100%;
   }
   .footer-card .logo {
-    margin-right: 50px;
+    margin-right: auto;
+    margin-left: auto;
   }
   .footer-card-title {
     width: 100%;
@@ -1172,8 +1173,17 @@ header.hidden {
   }
 }
 @media screen and (max-width: 680px) {
+  .header {
+    gap: 0 !important;
+  }
   .input {
     width: 100%;
+  }
+  .burger-menu {
+    margin-left: auto;
+  }
+  .nav-request-btn {
+    margin-left: auto;
   }
   .history-img-mobile {
     display: block;
@@ -1189,23 +1199,27 @@ header.hidden {
   }
   .hero-name {
     max-width: 100%;
-    margin-top: 0;
+    margin-top: 100px;
+    margin-bottom: 100px;
   }
   .hero-btn {
     font-size: 14px;
     padding: 15px;
+    width: 100%;
+    max-width: initial;
   }
   .hero-title {
     margin-top: 0;
     font-size: 30px;
     line-height: 130%;
-    text-align: center;
+    text-align: left;
   }
   .header .logo-text {
     display: none;
   }
   .navigation-container {
     width: 70%;
+    justify-content: initial;
   }
   .hero-advant {
     margin-bottom: 0;
@@ -1224,6 +1238,7 @@ header.hidden {
     line-height: 30px;
     font-size: 16px;
     text-align: left;
+    background-color: transparent;
   }
   .history-img-bg {
     display: none;
@@ -1233,27 +1248,39 @@ header.hidden {
   }
   .exp-bg {
     flex-wrap: initial;
-    flex-direction: column-reverse;
     gap: 20px;
-    padding: 0 20px 20px;
+    padding: 0 0px 20px;
   }
   .exp-bg-content {
     width: 80%;
+    gap: 0;
   }
   .exp-bg-text {
+    display: flex;
+    align-items: center;
+    gap: 20px;
     font-size: 16px;
-    border: 1px solid white;
     padding: 20px;
     gap: 20px;
+    text-align: left;
+
+    &::before {
+      content: "";
+      display: block;
+      width: calc(10px + (20 - 10) * (100vw - 375px) / (1900 - 375));
+      height: calc(10px + (20 - 10) * (100vw - 375px) / (1900 - 375));
+      border-radius: 40px;
+      background-color: #ffb404;
+    }
   }
   .exp-years-text {
     height: auto;
     text-align: center;
-    margin-top: -125px;
+    margin-top: -176px;
   }
   .exp-years-img {
     height: 230px;
-    font-size: 100px !important;
+    font-size: 78px !important;
   }
   .service-content {
     gap: 20px;
