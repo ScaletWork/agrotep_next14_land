@@ -14,8 +14,6 @@ const Header: FC = () => {
   const { t } = useTranslation();
   const { i18n } = useTranslation();
 
-  console.log(isLargeScreen);
-
   const navLinks = [
     { text: t("home"), href: "/" },
     { text: t("aboutUs"), href: "/about-us" },

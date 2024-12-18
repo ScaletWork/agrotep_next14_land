@@ -103,8 +103,6 @@ const AboutUsComponent: FC = () => {
     <Logo6Svg />,
   ];
 
-  console.log(formattedDescriptions);
-
   const renderHistory = () =>
     historyData.map((item, index) => (
       <motion.div
