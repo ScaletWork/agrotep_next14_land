@@ -36,7 +36,7 @@ const Footer: FC = () => {
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
 
-      if (scrollTop + windowHeight >= documentHeight) {
+      if (Math.ceil(scrollTop + windowHeight) >= documentHeight) {
         const nextPath = pageSequence[pathname];
         if (nextPath) {
           console.log(`Переход на следующий путь: ${nextPath}`);

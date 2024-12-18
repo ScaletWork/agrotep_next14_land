@@ -4,5 +4,4 @@ export const pageSequence: { [key: string]: string } = {
   "/services": "/auto-park",
   "/auto-park": "/careers",
   "/careers": "/contacts",
-  "/contacts": "/",
 };
