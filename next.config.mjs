@@ -3,8 +3,8 @@ const nextConfig = {
   images: { unoptimized: true },
 
   // For hosting
-  output: "export",
-  trailingSlash: true,
+  // output: "export",
+  // trailingSlash: true,
 
   // For git
   // output: "export",
