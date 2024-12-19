@@ -44,7 +44,7 @@ const ContactsComponent: FC = () => {
   }, []);
 
   return (
-    <section className="contacts">
+    <section className="contacts" id="careers">
       <div className="contact-info-wrapper container">
         <motion.div
           className="contact-info"

@@ -8,7 +8,7 @@ const CareersComponent: FC = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="careers-page">
+    <div className="careers-page" id="careers">
       <motion.section
         className="career"
         initial={{ opacity: 0 }}

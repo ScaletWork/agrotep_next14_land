@@ -193,7 +193,7 @@ const AutoParkComponent: FC = () => {
   };
 
   return (
-    <div className="autopark">
+    <div className="autopark" id="services">
       <motion.div
         className="autopark__img"
         initial={{ opacity: 0 }}

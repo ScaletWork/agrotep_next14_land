@@ -84,7 +84,7 @@ const ServicesComponent: FC = () => {
   };
 
   return (
-    <div className="services">
+    <div className="services" id="auto-park">
       <section className="services-main">
         <Swiper
           slidesPerView={1}

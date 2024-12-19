@@ -9,7 +9,7 @@ const GlobeSvg: FC = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_5186_1273)">
+      <g clipPath="url(#clip0_5186_1273)">
         <mask
           id="mask0_5186_1273"
           style={{ maskType: "luminance" }}

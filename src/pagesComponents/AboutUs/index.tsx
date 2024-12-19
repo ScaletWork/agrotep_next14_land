@@ -146,7 +146,7 @@ const AboutUsComponent: FC = () => {
   };
 
   return (
-    <div className="about-us">
+    <div className="about-us" id="about-us">
       <motion.section
         className="about-us-hero"
         initial={{ opacity: 0 }}

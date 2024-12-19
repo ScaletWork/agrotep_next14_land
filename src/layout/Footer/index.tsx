@@ -1,77 +1,18 @@
 "use client";
-
-import { pageSequence } from "@/utils/constant";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import { FC, useCallback, useEffect, useState } from "react";
+import { FC } from "react";
 import { useTranslation } from "react-i18next";
-import throttle from "lodash/throttle";
 
 const Footer: FC = () => {
   const { t } = useTranslation();
-  const router = useRouter();
-  const pathname = usePathname();
-  const [hasNavigated, setHasNavigated] = useState(false);
-
-  const autoNavigatePages = [
-    "/",
-    "/about-us",
-    "/services",
-    "/auto-park",
-    "/careers",
-    "/contacts",
-  ];
-
-  const handleScroll = useCallback(
-    throttle(() => {
-      if (!autoNavigatePages.includes(pathname)) {
-        return;
-      }
-
-      if (hasNavigated) {
-        return;
-      }
-
-      const scrollTop = window.scrollY || window.pageYOffset;
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-
-      if (Math.ceil(scrollTop + windowHeight) >= documentHeight) {
-        const nextPath = pageSequence[pathname];
-        if (nextPath) {
-          console.log(`Переход на следующий путь: ${nextPath}`);
-          setHasNavigated(true);
-          router.push(nextPath);
-        } else {
-          console.log("Следующий путь не найден в pageSequence");
-        }
-      }
-    }, 200), // Ограничиваем вызов обработчика раз в 200ms
-    [pathname, router, autoNavigatePages, hasNavigated]
-  );
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    console.log("Добавлен слушатель события scroll");
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      console.log("Удалён слушатель события scroll");
-    };
-  }, [handleScroll]);
-
-  // Сброс флага при смене страницы
-  useEffect(() => {
-    setHasNavigated(false);
-  }, [pathname]);
 
   const navLinks = [
-    { text: t("home"), href: "/" },
-    { text: t("aboutUs"), href: "/about-us" },
-    { text: t("services"), href: "/services" },
-    { text: t("trucks"), href: "/auto-park" },
-    { text: t("careers"), href: "/careers" },
-    { text: t("contactUs"), href: "/contacts" },
+    { text: t("home"), href: "#main" },
+    { text: t("aboutUs"), href: "#about-us" },
+    { text: t("services"), href: "#services" },
+    { text: t("trucks"), href: "#auto-park" },
+    { text: t("careers"), href: "#careers" },
+    { text: t("contactUs"), href: "#contacts" },
   ];
 
   const renderLinks = () => {

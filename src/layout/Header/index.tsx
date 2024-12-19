@@ -15,12 +15,12 @@ const Header: FC = () => {
   const { i18n } = useTranslation();
 
   const navLinks = [
-    { text: t("home"), href: "/" },
-    { text: t("aboutUs"), href: "/about-us" },
-    { text: t("services"), href: "/services" },
-    { text: t("trucks"), href: "/auto-park" },
-    { text: t("careers"), href: "/careers" },
-    { text: t("contactUs"), href: "/contacts" },
+    { text: t("home"), href: "#main" },
+    { text: t("aboutUs"), href: "#about-us" },
+    { text: t("services"), href: "#services" },
+    { text: t("trucks"), href: "#auto-park" },
+    { text: t("careers"), href: "#careers" },
+    { text: t("contactUs"), href: "#contacts" },
   ];
 
   const toggleModal = () => setModalOpen((prev) => !prev);

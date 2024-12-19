@@ -43,12 +43,14 @@ li {
 }
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 body {
   font-family: "Comfortaa", sans-serif;
   font-optical-sizing: auto;
   margin: 0;
   min-width: 375px;
+  scroll-behavior: smooth;
 }
 
 header {
