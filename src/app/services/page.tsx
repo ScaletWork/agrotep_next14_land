@@ -1,8 +1,8 @@
 import AutoParkComponent from "@/pagesComponents/AutoPark";
 import { FC } from "react";
 
-const AutoPark: FC = () => {
+const Services: FC = () => {
   return <AutoParkComponent />;
 };
 
-export default AutoPark;
+export default Services;

@@ -131,17 +131,36 @@
 
       img {
         margin: 0 auto;
-        width: auto;
+        width: 100%;
+        padding: 0 20%;
         height: auto;
+        object-fit: contain;
+        max-width: initial;
+      }
+
+      &_reverse {
+        img {
+          margin: initial;
+          align-self: center;
+        }
       }
     }
 
     &__block {
-      padding-top: 70px;
+      padding-top: 36px;
       padding-bottom: 0;
       h3 {
         text-align: center;
         margin-bottom: 20px;
+        margin-left: 0;
+      }
+    }
+
+    &__list {
+      gap: 20px;
+
+      li {
+        gap: 20px;
       }
     }
   }
@@ -299,6 +318,12 @@
       flex-direction: column;
       gap: 30px;
 
+      > img {
+        width: 100%;
+        max-width: 50%;
+        height: auto;
+      }
+
       svg {
         width: 100%;
         max-width: 200px;
@@ -320,7 +345,11 @@
       }
 
       ul {
+        padding-left: 0;
         li {
+          padding: 15px 0;
+          min-height: initial;
+          border-bottom: initial;
           flex-direction: column;
         }
       }
@@ -366,25 +395,54 @@
     margin: auto 0;
 
     h4 {
-      font-size: res(18, 32);
+      font-size: res(16, 22);
       font-weight: 600;
       line-height: 1.4;
       margin-bottom: 30px;
     }
 
     p {
-      font-size: res(16, 22);
+      font-size: res(14, 20);
       font-weight: 600;
       line-height: 1.4;
     }
   }
 
   @include mobile {
+    padding-top: 15px;
+    padding-bottom: 15px;
     flex-direction: column-reverse;
+    gap: 15px;
+
+    &__block {
+      padding: 30px 15px;
+
+      p {
+        text-align: left;
+      }
+    }
 
     ul {
       grid-template-columns: repeat(2, 1fr);
       flex: 1;
+      margin-top: 0;
+      margin-bottom: 0;
+
+      li {
+        min-height: 163px;
+        padding: 50px;
+
+        &:first-child {
+          order: 9;
+          padding: 0px 130px;
+          grid-column-start: 1;
+          grid-column-end: 3;
+        }
+
+        &:last-child {
+          order: 1;
+        }
+      }
     }
   }
 }
@@ -431,7 +489,7 @@
   h2 {
     font-family: "Lalezar", sans-serif;
     font-weight: 500;
-    font-size: res(48, 70);
+    font-size: res(28, 70);
     line-height: 1;
 
     &:last-child {
@@ -442,7 +500,7 @@
       font-family: "Lalezar", sans-serif;
       font-weight: 500;
       line-height: 77%;
-      font-size: res(86, 400);
+      font-size: res(56, 400);
       color: #ffb404;
       text-shadow: 2px 2px 4px #000000;
     }
@@ -460,7 +518,7 @@
     h2 {
       font-family: "Inter", sans-serif;
       font-weight: 400;
-      font-size: res(24, 48);
+      font-size: res(20, 48);
       text-align: center;
     }
 
@@ -473,7 +531,6 @@
       height: 100%;
       font-family: "Inter", sans-serif;
       font-weight: 400;
-      font-size: 24px;
       line-height: 1;
       background-color: rgba(0, 0, 0, 0.5);
     }
@@ -509,12 +566,13 @@
   }
 
   @include mobile {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 0;
+    padding-bottom: 0;
 
     &__wrapper {
-      padding-top: 60px;
-      padding-bottom: 60px;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      gap: 40px;
     }
 
     &__block {
@@ -533,10 +591,16 @@
     .swiper {
       width: 100%;
       max-width: 500px;
+      height: 300px;
 
       img {
         width: 100%;
         flex: 1;
+        height: 300px;
+      }
+
+      &-wrapper {
+        height: 300px;
       }
     }
   }
@@ -587,9 +651,13 @@
   }
 
   @include mobile {
-    padding-top: 50px;
-    padding-bottom: 100px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     flex-direction: column;
+
+    h2 {
+      margin-bottom: 30px;
+    }
 
     img {
       width: 100%;
@@ -601,6 +669,8 @@
       }
       &:last-child {
         margin-right: auto;
+        margin-top: 30px;
+        padding: 0 60px;
       }
     }
   }

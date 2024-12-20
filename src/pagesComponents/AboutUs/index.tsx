@@ -103,8 +103,6 @@ const AboutUsComponent: FC = () => {
     <Logo6Svg />,
   ];
 
-  console.log(formattedDescriptions);
-
   const renderHistory = () =>
     historyData.map((item, index) => (
       <motion.div
@@ -245,6 +243,7 @@ const AboutUsComponent: FC = () => {
         <div className="about-us-slider__mobile">
           <Swiper
             loop
+            autoHeight={true}
             slidesPerView={1}
             spaceBetween={110}
             navigation
@@ -258,6 +257,7 @@ const AboutUsComponent: FC = () => {
                 key={index}
               >
                 <motion.img
+                  style={index % 2 === 0 ? { maxWidth: "80%" } : {}}
                   src={src.img}
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}

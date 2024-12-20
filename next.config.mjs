@@ -2,15 +2,14 @@
 const nextConfig = {
   images: { unoptimized: true },
 
-  // For Build version github
+  // For hosting
+  // output: "export",
+  // trailingSlash: true,
 
+  // For git
   // output: "export",
   // basePath: "/Agrotep",
   // assetPrefix: "/Agrotep/",
-
-  // For Build version normal host
-
-  output: "export",
 };
 
 export default nextConfig;

@@ -1,5 +1,6 @@
 "use client";
 
+import i18n from "@/utils/i18n";
 import { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -35,7 +36,15 @@ const LocationsForm: FC = () => {
   return (
     <section className="locations">
       <div className="locations__overlay"></div>
-      <img src="/img/main/map.jpg" alt="" className="location-map" />
+      <img
+        src={`${
+          i18n.language === "en"
+            ? "/img/main/map_eng.jpg"
+            : "/img/main/map_ukr.jpg"
+        }`}
+        alt=""
+        className="location-map"
+      />
       <form
         onSubmit={handleSubmit}
         className="modal-form location-form"
