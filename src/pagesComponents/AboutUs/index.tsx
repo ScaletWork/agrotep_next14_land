@@ -47,6 +47,10 @@ const AboutUsComponent: FC = () => {
       year: "2023",
       description: t("historyData.2023"),
     },
+    {
+      year: "2025",
+      description: t("historyData.2025"),
+    },
   ];
 
   const descriptions = historyData.map((data) => data.description);
