@@ -18,7 +18,7 @@ const Header: FC = () => {
     { text: t("home"), href: "#main" },
     { text: t("aboutUs"), href: "#about-us" },
     { text: t("services"), href: "#services" },
-    { text: t("trucks"), href: "#auto-park" },
+    { text: t("fleet"), href: "#auto-park" },
     { text: t("careers"), href: "#careers" },
     { text: t("contactUs"), href: "#contacts" },
   ];
