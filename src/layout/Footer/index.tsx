@@ -42,13 +42,13 @@ const Footer: FC = () => {
           </div>
           <div className="footer-card-row">
             <h5 className="card-row-title">{t("phoneNumbers")}:</h5>
-            <p className="card-row-info">+ 38 (044) 206 64 51</p>
-            <p className="card-row-info">+ 38 (050) 449 52 71</p>
-            <p className="card-row-info">+ 38 (095) 206 64 50</p>
+            <p className="card-row-info">+ 38 (044) 206 64 51 ({t("officeNumber")})</p>
+            <p className="card-row-info">+ 38 (050) 449 52 71 ({t("officeMobileNumber")})</p>
+            <p className="card-row-info">+ 38 (095) 206 64 50 ({t("HRDepartmentNumber")})</p>
           </div>
           <div className="footer-card-row">
             <h5 className="card-row-title">{t("email2")}:</h5>
-            <p className="card-row-info">ua@agrotep.com</p>
+            <p className="card-row-info">HR@agrotep.com</p>
             <p className="card-row-info">agrotep@agrotep.com</p>
           </div>
         </div>

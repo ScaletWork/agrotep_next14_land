@@ -34,6 +34,9 @@
   "address": "Address",
   "address_text": "Kyiv, 8 Roberta Lisovskyi Street",
   "phoneNumbers": "Phone numbers",
+  "officeNumber": "Office",
+  "officeMobileNumber": "Office, mobile",
+  "HRDepartmentNumber": "HR department",
   "socialMedia": "Social media",
   "serviceTitle": "Our Services",
   "serviceFirstLink": "trucks",
@@ -41,24 +44,20 @@
   "serviceFirstList1": "Eco-class Euro 6",
   "serviceFirstList2": "GPS tracking",
   "serviceFirstList3": "Latest safety and control systems",
-
   "serviceSecondLink": "curtain trailers",
   "serviceSecondList0": "XL certification for curtains",
   "serviceSecondList1": "Full curtain opening capability",
   "serviceSecondList2": "Full un-tenting capability",
   "serviceSecondList3": "Anti-vandal trailers",
-
   "serviceThirdLink": "refrigerators",
   "serviceThirdList0": "Modern semi-trailers with Carrier refrigerators",
   "serviceThirdList1": "Multi-mode refrigerators",
   "serviceThirdList2": "FRC certification of each semi-trailer",
   "serviceThirdList3": "Double-deck refrigerators (for 66 pallets)",
-
   "transportationTitle": "Transportation Services",
   "transportationList0": "Transporting all ADR hazard classes except 7",
   "transportationList1": "Official license from State Transport Safety Service of Ukraine",
   "transportationList2": "Over 20 years of experience with hazardous cargo",
-
   "routesTitle": "Transportation Routes",
   "westernEuropeTitle": "Western Europe",
   "westernEuropeText": "France, Belgium, the Netherlands, Luxembourg, Germany, Austria, Switzerland",
@@ -72,7 +71,6 @@
   "balkansText": "Albania, Serbia, Montenegro, Bosnia and Herzegovina, North Macedonia",
   "asiaTitle": "Asia",
   "asiaText": "Armenia, Georgia, Azerbaijan, Turkey",
-
   "logosTitle": "Our Partners",
   "dangerous_transportation": "Transportation of {span}DANGEROUS{span} goods",
   "danger_sign": "Danger Sign",

@@ -60,9 +60,9 @@ const ContactsComponent: FC = () => {
             />
             <div className="contact-info-wrap">
               <h4 className="contact-info-title">{t("phoneNumberTitle")}</h4>
-              <span className="contact-info-content">+380442066451</span>
-              <span className="contact-info-content">+380504495271</span>
-              <span className="contact-info-content">+380952066450</span>
+              <span className="contact-info-content">+380442066451 <span className="contact-info-content__additional">({t("officeNumber")})</span></span>
+              <span className="contact-info-content">+380504495271 <span className="contact-info-content__additional">({t("officeMobileNumber")})</span></span>
+              <span className="contact-info-content">+380952066450 <span className="contact-info-content__additional">({t("HRDepartmentNumber")})</span></span>
             </div>
           </div>
           <div className="contact-info-mail contact-info-block">

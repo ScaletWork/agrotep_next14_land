@@ -1,5 +1,6 @@
 .contacts {
   background: linear-gradient(270deg, #222f4e 58.52%, #174ac3 132.89%);
+
   input {
     width: 100%;
     margin-right: 0 !important;
@@ -16,6 +17,7 @@
     flex-wrap: wrap;
     row-gap: 30px;
   }
+
   .contact-info-block {
     display: flex;
     align-items: center;
@@ -23,6 +25,7 @@
     min-width: 350px;
     width: 30%;
   }
+
   .contact-img {
     box-sizing: border-box;
     width: 100px;
@@ -31,21 +34,29 @@
     border: 4px solid #f2cd00;
     border-radius: 50%;
   }
+
   .contact-info-wrap {
     display: flex;
     flex-direction: column;
     row-gap: 10px;
   }
+
   .contact-info-title {
     color: #f2cd00;
     font-weight: 600;
     font-size: res(18, 24);
   }
+
   .contact-info-content {
     color: #ffffff;
     line-height: 150%;
     font-size: res(12, 18);
+
+    &__additional {
+      font-size: 12px;
+    }
   }
+
   .contact-form {
     position: relative;
     z-index: 1;
@@ -76,12 +87,14 @@
       margin: auto;
       margin-bottom: 15px;
     }
+
     .modal-form-back {
       width: 40%;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
+
     .request-btn-back {
       cursor: pointer;
       width: 60%;
@@ -97,6 +110,7 @@
       font-weight: 400;
       margin-top: 20px;
     }
+
     .input-back {
       font-family: "Inter", sans-serif;
       min-width: 180px;
@@ -113,6 +127,7 @@
       font-size: 18px;
       margin-right: 5px;
     }
+
     .comment-back {
       font-family: "Inter", sans-serif;
       width: 100%;
@@ -128,9 +143,11 @@
       font-size: 18px;
       min-height: 150px;
     }
+
     .form-legend-back {
       width: 100%;
     }
+
     .form-legend-title-back {
       font-size: res(18, 32);
       font-weight: 900;
@@ -154,6 +171,7 @@
     align-items: center;
     gap: 10px;
   }
+
   .loader {
     display: none;
     width: 100px;
@@ -172,36 +190,44 @@
     mask-composite: subtract;
     animation: l3 1s infinite linear;
   }
+
   .show {
     display: flex;
   }
+
   .hide {
     display: none;
   }
+
   @keyframes l3 {
     to {
       transform: rotate(1turn);
     }
   }
+
   .burger-menu {
     height: 30px;
     display: none;
     flex-direction: column;
     justify-content: space-between;
   }
+
   .burger-line {
     width: 40px;
     height: 3px;
     background-color: #eff3f3;
     transition: all 0.3s ease;
   }
+
   .contact-form-img-container {
     width: 40%;
     position: relative;
   }
+
   .contact-form-img {
     width: 100%;
   }
+
   .contact-form-img-container::before {
     content: "";
     position: absolute;
@@ -212,6 +238,7 @@
     top: -20px;
     left: -20px;
   }
+
   .contact-form-img-container::after {
     content: "";
     position: absolute;
