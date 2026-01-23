@@ -48,8 +48,9 @@ const Footer: FC = () => {
           </div>
           <div className="footer-card-row">
             <h5 className="card-row-title">{t("email2")}:</h5>
-            <p className="card-row-info">HR@agrotep.com</p>
             <p className="card-row-info">agrotep@agrotep.com</p>
+            <p className="card-row-info">HR@agrotep.com</p>
+
           </div>
         </div>
         <div className="footer-card">

@@ -73,8 +73,9 @@ const ContactsComponent: FC = () => {
             />
             <div className="contact-info-wrap">
               <h4 className="contact-info-title">{t("emailTitle")}</h4>
-              <span className="contact-info-content">ua@agrotep.com</span>
               <span className="contact-info-content">agrotep@agrotep.com</span>
+              <span className="contact-info-content">HR@agrotep.com</span>
+
             </div>
           </div>
           <div className="contact-info-adress contact-info-block">
